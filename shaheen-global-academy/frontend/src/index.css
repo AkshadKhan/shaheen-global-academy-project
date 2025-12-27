@@ -1012,6 +1012,15 @@
     border-color: var(--color-blue-200);
   }
 
+  .login-btn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }

@@ -4,13 +4,14 @@ import { X,  Edit, Trash2, LogOut, Users, Award } from 'lucide-react';
 
 const API_URL = 'http://localhost:3000/api/v1/admin/auth';
 
+
 // Types
 interface Topper {
   _id: string;
   name: string;
   course: string;
   year: number;
-  cgpa: number;
+  marks: number;
   profilePicture?: string;
 }
 
@@ -29,7 +30,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState<'toppers' | 'teachers'>('toppers');
   
   // Login state
-  const [username, setUsername] = useState('');
+  const [userName, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [showRegister, setShowRegister] = useState(false);
   const [regUsername, setRegUsername] = useState('');
@@ -39,7 +40,7 @@ const App = () => {
   const [toppers, setToppers] = useState<Topper[]>([]);
   const [showTopperModal, setShowTopperModal] = useState(false);
   const [editingTopper, setEditingTopper] = useState<Topper | null>(null);
-  const [topperForm, setTopperForm] = useState({ name: '', course: '', year: '', cgpa: '' });
+  const [topperForm, setTopperForm] = useState({ name: '', course: '', year: '', marks: '' });
   const [topperImage, setTopperImage] = useState<File | null>(null);
   
   // Teachers state
@@ -95,7 +96,7 @@ const App = () => {
       const res = await fetch(`${API_URL}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ userName, password })
       });
       const data = await res.json();
       
@@ -139,11 +140,11 @@ const App = () => {
         name: topper.name,
         course: topper.course,
         year: topper.year.toString(),
-        cgpa: topper.cgpa.toString()
+        marks: topper.marks.toString()
       });
     } else {
       setEditingTopper(null);
-      setTopperForm({ name: '', course: '', year: '', cgpa: '' });
+      setTopperForm({ name: '', course: '', year: '', marks: '' });
     }
     setTopperImage(null);
     setShowTopperModal(true);
@@ -154,7 +155,7 @@ const App = () => {
     formData.append('name', topperForm.name);
     formData.append('course', topperForm.course);
     formData.append('year', topperForm.year);
-    formData.append('cgpa', topperForm.cgpa);
+    formData.append('cgpa', topperForm.marks);
     if (topperImage) {
       formData.append('profilePicture', topperImage);
     }
@@ -280,7 +281,7 @@ const App = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">Username</label>
               <input
                 type="text"
-                value={username}
+                value={userName}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               />
@@ -297,7 +298,7 @@ const App = () => {
             </div>
             <button
               onClick={handleLogin}
-              className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+              className="w-full bg-blue-600 text-black py-2 rounded-lg hover:bg-blue-700 z-2 transition"
             >
               Login
             </button>
@@ -377,7 +378,7 @@ const App = () => {
                   <h3 className="text-xl font-semibold text-center mb-2">{topper.name}</h3>
                   <p className="text-gray-600 text-center mb-1">{topper.course}</p>
                   <p className="text-gray-600 text-center mb-1">Year: {topper.year}</p>
-                  <p className="text-blue-600 font-bold text-center mb-4">CGPA: {topper.cgpa}</p>
+                  <p className="text-blue-600 font-bold text-center mb-4">CGPA: {topper.marks}</p>
                   <div className="flex gap-2">
                     <button
                       onClick={() => openTopperModal(topper)}
@@ -491,12 +492,12 @@ const App = () => {
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">CGPA</label>
+                <label className="block text-sm font-medium mb-2">Marks</label>
                 <input
                   type="number"
                   step="0.01"
-                  value={topperForm.cgpa}
-                  onChange={(e) => setTopperForm({...topperForm, cgpa: e.target.value})}
+                  value={topperForm.marks}
+                  onChange={(e) => setTopperForm({...topperForm, marks: e.target.value})}
                   className="w-full px-4 py-2 border rounded-lg"
                 />
               </div>
