@@ -1,7 +1,7 @@
 import express from "express";
 import adminRoutes from "./routes/admin.routes.js";
 import topperRoutes from "./routes/topper.routes.js"
-import teachRoutes from "./routes/teacher.routes.js"
+import teacherRoutes from "./routes/teacher.routes.js"
 
 const app = express();
 

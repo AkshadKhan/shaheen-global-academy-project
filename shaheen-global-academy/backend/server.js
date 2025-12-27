@@ -12,6 +12,11 @@ app.use(cors({
 
 const port = process.env.PORT || 3000;
 
+if (!fs.existsSync('./uploads')) {
+  fs.mkdirSync('./uploads');
+}
+
+
 // DB connection
 db();
 

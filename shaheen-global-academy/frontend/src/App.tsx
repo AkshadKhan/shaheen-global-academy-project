@@ -5,9 +5,7 @@ import { Header } from './components/Header';
 import HomePage from "./pages/HomePage";
 import AcademicsPage from "./pages/AcademicsPage";
 import { Footer } from "./components/Footer";
-import AdminLogin from "./pages/AdminLogin";
-
-
+// import AdminLogin from "./pages/AdminLogin";
 
 
 
@@ -20,7 +18,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/academics" element={<AcademicsPage />} />
-          <Route path="/login" element={<AdminLogin />} />
+          {/* <Route path="/login" element={<AdminLogin />} /> */}
           
         </Routes>
       </main>
