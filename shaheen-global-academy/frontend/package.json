@@ -30,7 +30,11 @@
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
     "postcss": "^8.5.6",
+<<<<<<< HEAD
     "tailwindcss": "^4.1.18",
+=======
+    "tailwindcss": "^3.4.17",
+>>>>>>> d1405ad1e5ca8998a130092b2154f603f977bb00
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite": "npm:rolldown-vite@7.2.5"

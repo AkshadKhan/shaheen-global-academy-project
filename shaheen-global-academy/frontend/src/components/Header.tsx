@@ -95,10 +95,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`max-h-5 fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 w-full left-0 right-0 z-50 h-17 transition-all duration-300 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-md"
-            : "bg-white/10 backdrop-blur-sm"
+            ? "bg-white shadow-md py-2"
+            : "bg-white py-4"
         }`}
       >
         <div className="container mx-auto px-6 py-5">
@@ -113,7 +113,8 @@ export function Header() {
               <img
                 src={logo}
                 alt="Shaheen Education Foundation"
-                className="h-14"
+                className={`transition-all duration-100
+                  ${scrolled ? "h-8" : "h-12"}`}
               />
               {/* <span className={`ml-auto transition-all duration-300 relative group font-semibold ${scrolled
                 ? 'text-gray-700 hover:text-gray-900 text-base'

@@ -14,7 +14,7 @@ import { About } from '../components/AboutSection';
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Header />
+      {/* <Header /> */}
       <main className="pt-[40px] pr-[0px] pb-[0px] pl-[0px]">
         <div id="hero">
           <Hero />

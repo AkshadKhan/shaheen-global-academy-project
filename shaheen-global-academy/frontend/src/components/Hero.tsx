@@ -2,7 +2,7 @@ import heroImage from '../assets/bg.png';
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden w-full" style={{ marginTop: '84px', minHeight: 'calc(100vh - 84px)' }}>
+    <section className="relative overflow-hidden w-full" style={{ marginTop: '46px', minHeight: 'calc(100vh - 84px)' }}>
       {/* Background container for video/gif - add your video/gif here later */}
       <div className="absolute inset-0">
         <img src={heroImage} alt="" className="w-full h-full object-cover object-center blur-[1.5px]" />
@@ -25,7 +25,7 @@ export function Hero() {
                   Shaheen Global Academy
                 </h1>
                 <div className="flex items-center gap-3">
-                  <div className="h-px w-12 bg-[#9AE600]"></div>
+                  <div className="h-px w-12 bg-[#9ae600]"></div>
                   <span className="text-[#9AE600] text-sm tracking-wider uppercase">
                     Katauli, Lucknow
                   </span>
