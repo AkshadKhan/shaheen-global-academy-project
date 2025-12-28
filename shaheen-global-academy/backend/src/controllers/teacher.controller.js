@@ -1,6 +1,5 @@
 import Teacher from "../model/teacher.model.js"
-
-app.post('/api/x-admin-panel/teachers', verifyToken, upload.single('profilePicture'), async (req, res) => {
+export const teacher = async (req, res) => {
   try {
     const { name, department, designation, email } = req.body;
     const profilePicture = req.file ? req.file.path : null;
@@ -12,11 +11,11 @@ app.post('/api/x-admin-panel/teachers', verifyToken, upload.single('profilePictu
   } catch (error) {
     res.status(500).json({ message: 'Error creating teacher', error: error.message });
   }
-});
+};
 
 // Get All Teachers
 
-export const teacher = async (req, res) => {
+export const getTeachers = async (req, res) => {
   try {
     const teachers = await Teacher.find().sort({ name: 1 });
     res.json(teachers);
@@ -26,7 +25,7 @@ export const teacher = async (req, res) => {
 };
 
 // Get Single Teacher
-export const getTeachers =   async (req, res) => {
+export const getTeacher =   async (req, res) => {
   try {
     const teacher = await Teacher.findById(req.params.id);
     if (!teacher) {
@@ -39,7 +38,7 @@ export const getTeachers =   async (req, res) => {
 };
 
 // Update Teacher
-export const updateTeachers = async (req, res) => {
+export const updateTeacher = async (req, res) => {
   try {
     const { name, department, designation, email } = req.body;
     const teacher = await Teacher.findById(req.params.id);

@@ -4,9 +4,10 @@ dotenv.config();
 import app from "./src/app.js";
 import  db  from "./src/utils/model.js";
 import cors from "cors";
+import fs from "fs"
 
 app.use(cors({
-  origin:"http://localhost:5173",
+  origin:"*",
   credentials:true
 }))
 
