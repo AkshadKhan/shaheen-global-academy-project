@@ -69,7 +69,7 @@ export function Footer() {
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">About us</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">FAQ</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Contact us</a></li>
-                <li><a href="/login" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
+                {/* <li><a href="/login" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li> */}
               </ul>
             </div>
 
@@ -92,6 +92,7 @@ export function Footer() {
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Cookie policy</a></li>
+                <li><a href="/login" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
               </ul>
             </div>
           </div>
