@@ -209,18 +209,7 @@ export default function AdminDashboard() {
 
     try {
       if (activeTab === 'toppers') {
-
-        const payload = {
-          name: formData.name,
-          exam: formData.subject,
-          score: `${formData.percentage}/720`,
-          rank: Number(formData.rank),
-          year: Number(formData.year),
-        }; // Build payload as needed
-
-        // await apiCall('/api/v1/admin/topper', 'POST', payload); // later
-
-        const newTopper: Topper = {
+        const newItem: Topper = {
           id:
             modalMode === 'edit' && editingItem
               ? editingItem.id
@@ -236,8 +225,8 @@ export default function AdminDashboard() {
 
         setToppers(prev =>
           modalMode === 'add'
-            ? [...prev, newTopper]
-            : prev.map(t => (t.id === newTopper.id ? newTopper : t))
+            ? [...prev, newItem]
+            : prev.map(t => (t.id === newItem.id ? newItem : t))
         );
       } else {
         const newItem: Teacher = {
