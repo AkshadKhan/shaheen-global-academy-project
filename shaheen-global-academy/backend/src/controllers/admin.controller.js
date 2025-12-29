@@ -10,8 +10,15 @@ dotenv.config();
 // register admin
 const register = async (req, res) => {
     try {
-        const { userName, password } = req.body;
-        const existingAdmin = await Admin.findOne({ userName })
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({
+                message: "All fields are required"
+            });
+        }
+
+        const existingAdmin = await Admin.findOne({ email })
         if (existingAdmin) {
             return res.status(400).json({
                 message: "Admin already registered"
@@ -21,18 +28,18 @@ const register = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         const admin = new Admin({
-            userName,
-            password : hashedPassword
+            email,
+            password: hashedPassword
         })
         await admin.save();
         return res.status(201).json({
             message: "Admin saved successfuly"
         })
     } catch (error) {
-        return res.status(400).json({
+        return res.status(500).json({
             message: "Error registering user",
             error: error.message
-        })
+        });
 
     }
 
@@ -43,8 +50,13 @@ const register = async (req, res) => {
 
 const login = async (req, res) => {
     try {
-        const { userName, password } = req.body;
-        const searchAdmin = await Admin.findOne({userName});
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({message: "All fields are required"});
+        }
+
+        const searchAdmin = await Admin.findOne({ email });
         if (!searchAdmin) {
             return res.status(400).json({
                 message: "Invalid credentials"
@@ -75,4 +87,4 @@ const login = async (req, res) => {
     }
 }
 
-export {login,register};
+export { login, register };

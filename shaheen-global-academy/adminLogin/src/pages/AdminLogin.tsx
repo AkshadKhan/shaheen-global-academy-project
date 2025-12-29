@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Lock, Mail, Settings, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface Message {
@@ -8,6 +9,7 @@ interface Message {
 
 export default function AdminLogin() {
   const API_BASE_URL = "http://localhost:3000/api/v1/admin/auth";
+  const navigate = useNavigate();
 
   const [useRealApi, setUseRealApi] = useState(false);
   // const [apiEndpoint, setApiEndpoint] = useState(
@@ -45,6 +47,7 @@ export default function AdminLogin() {
       //token jwt saved in local storage
       localStorage.setItem("authToken", data.token);
       setMessage({ type: "success", text: "Login successful" });
+      navigate("/dashboard");
 
     } catch (error: any) {
       setMessage({ type: "error", text: error.message || "Login failed" });

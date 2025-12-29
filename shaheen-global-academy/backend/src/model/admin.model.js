@@ -1,15 +1,14 @@
 import mongoose from "mongoose";
 
 const adminSchema = new mongoose.Schema({
-    userName : {
+    email: {
         type:String,
         required:true,
         unique:true
     },
     password: {
         type:String,
-        required:true,
-        unique:true
+        required:true
     }
 },{timestamps:true})
 
