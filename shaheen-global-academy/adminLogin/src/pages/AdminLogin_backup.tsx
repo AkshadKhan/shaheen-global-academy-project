@@ -7,12 +7,10 @@ interface Message {
 }
 
 export default function AdminLogin() {
-  const API_BASE_URL = "http://localhost:3000/api/v1/admin/auth";
-
   const [useRealApi, setUseRealApi] = useState(false);
-  // const [apiEndpoint, setApiEndpoint] = useState(
-  //   "https://api.example.com/auth/login",
-  // );
+  const [apiEndpoint, setApiEndpoint] = useState(
+    "https://api.example.com/auth/login",
+  );
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -24,30 +22,26 @@ export default function AdminLogin() {
   });
 
   const handleLogin = async () => {
-    if (!email || !password) {
-      setMessage({ type: "error", text: "Please enter email and password" });
-      return;
-    }
     setLoading(true);
     setMessage({ type: "success", text: "" });
 
     try {
-      const res = await fetch(`${API_BASE_URL}/login`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      if (useRealApi) {
+        const res = await fetch(apiEndpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        });
 
-      const data = await res.json();
+        if (!res.ok) throw new Error("Invalid credentials");
 
-      if (!res.ok) throw new Error(data.message || "Invalid credentials");
+        const data = await res.json();
+        localStorage.setItem("authToken", data.token);
+      }
 
-      //token jwt saved in local storage
-      localStorage.setItem("authToken", data.token);
       setMessage({ type: "success", text: "Login successful" });
-
-    } catch (error: any) {
-      setMessage({ type: "error", text: error.message || "Login failed" });
+    } catch {
+      setMessage({ type: "error", text: "Login failed" });
     } finally {
       setLoading(false);
     }
@@ -114,8 +108,8 @@ export default function AdminLogin() {
             {message.text && (
               <div
                 className={`flex gap-2 p-2 rounded-lg ${message.type === "error"
-                  ? "bg-red-500/20 text-red-300 border border-red-500/30"
-                  : "bg-[#9AE600]/20 text-[#9AE600] border border-[#9AE600]/30"
+                    ? "bg-red-500/20 text-red-300 border border-red-500/30"
+                    : "bg-[#9AE600]/20 text-[#9AE600] border border-[#9AE600]/30"
                   }`}
               >
                 {message.type === "error" ? (
