@@ -5,18 +5,18 @@ const topperSchema = new mongoose.Schema({
         type:String,
         required:true,
     } ,
-    course: {
+    exam: {
         type:String,
         required:true
     } ,
-    marks: {
-        type:Number,
+    score: {
+        type:String,
         required:true
     },
-    totalMarks: {
+    rank: {
         type:Number,
-        required: true
-    } , 
+        required:true
+    } ,
     year: {
         type:Number,
         required:true

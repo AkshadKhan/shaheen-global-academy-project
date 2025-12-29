@@ -171,7 +171,7 @@ export function ToppersSection() {
                         {/* Rank Badge */}
                         <div className="absolute top-4 right-4">
                           <div className="bg-[#9AE600] text-gray-900 px-4 py-1.5 rounded-full text-sm">
-                            {topper.rank}
+                            <span>AIR {topper.rank}</span>
                           </div>
                         </div>
                         
