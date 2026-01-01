@@ -1,11 +1,15 @@
 import logo from '../assets/logo.png';
 import { Mail } from 'lucide-react';
+import { useState } from 'react';
+import ComingSoonModal from './ComingSoonModal';
 
 export function Footer() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <footer className="bg-gray-50">
       {/* Newsletter Section */}
-      <div className="container mx-auto px-6 py-16">
+      {/* <div className="container mx-auto px-6 py-16">
         <div className="text-center max-w-2xl mx-auto">
           <h2 className="text-gray-900 mb-4">
             Subscribe to our newsletter
@@ -30,7 +34,7 @@ export function Footer() {
             Our experts are ready to help!
           </p>
         </div>
-      </div>
+      </div> */}
 
       {/* Dark Footer Section */}
       <div className="bg-gray-900 text-white">
@@ -65,7 +69,7 @@ export function Footer() {
               <ul className="space-y-2">
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Admission</a></li>
                 <li><a href="https://www.google.com/maps/search/Shaheen+Global+Academy+Dr.+Abdul+Ali+Tibbiya+College+Road+Katauli+Malihabad+Lucknow+Uttar+Pradesh+226102" className="text-gray-400 hover:text-lime-400 transition-colors">Address</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Programs</a></li> {/* upar kar diya - google map link in href */}
+                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Programs</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">About us</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">FAQ</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Contact us</a></li>
@@ -92,7 +96,7 @@ export function Footer() {
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Cookie policy</a></li>
-                <li><a href="http://localhost:5174" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
+                <li><a onClick={() => setShowModal(true)} className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
               </ul>
             </div>
           </div>
@@ -105,6 +109,12 @@ export function Footer() {
           </div>
         </div>
       </div>
+      {/* Coming Soon Modal */}
+      <ComingSoonModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        message="Admin Login portal is currently under development. We'll notify you once it's ready!"
+      />
     </footer>
   );
 }

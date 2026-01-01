@@ -58,13 +58,13 @@ export function FacultiesSection() {
   const departments = [
     { id: 'all', label: 'All Departments' },
     { id: 'mathematics', label: 'Mathematics' },
-    { id: 'biology', label: 'Biology' },  
+    { id: 'biology', label: 'Biology' },
     { id: 'chemistry', label: 'Chemistry' },
     { id: 'physics', label: 'Physics' }
   ];
 
-  const filteredFaculties = selectedDepartment === 'all' 
-    ? faculties 
+  const filteredFaculties = selectedDepartment === 'all'
+    ? faculties
     : faculties.filter(faculty => faculty.department === selectedDepartment);
 
   return (
@@ -87,11 +87,10 @@ export function FacultiesSection() {
             <button
               key={dept.id}
               onClick={() => setSelectedDepartment(dept.id)}
-              className={`px-6 py-2.5 rounded-full transition-all duration-300 ${
-                selectedDepartment === dept.id
+              className={`px-6 py-2.5 rounded-full transition-all duration-300 ${selectedDepartment === dept.id
                   ? 'bg-[#9AE600] text-gray-900 shadow-lg scale-105'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+                }`}
             >
               {dept.label}
             </button>
@@ -101,15 +100,15 @@ export function FacultiesSection() {
         {/* Faculty Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {filteredFaculties.map((faculty, index) => (
-            <div 
+            <div
               key={index}
               className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 group"
             >
               {/* Profile Image */}
               <div className="relative mb-5">
                 <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-[#9AE600] shadow-lg group-hover:scale-105 transition-transform duration-300">
-                  <img 
-                    src={faculty.image} 
+                  <img
+                    src={faculty.image}
                     alt={faculty.name}
                     className="w-full h-full object-cover"
                   />
@@ -126,7 +125,7 @@ export function FacultiesSection() {
                 <h3 className="text-gray-900">
                   {faculty.name}
                 </h3>
-                
+
                 <div className="flex items-center justify-center gap-2 text-[#9AE600]">
                   <GraduationCap className="w-4 h-4" />
                   <p className="text-sm">
@@ -143,11 +142,11 @@ export function FacultiesSection() {
               </div>
 
               {/* Hover Action */}
-              <div className="mt-5 pt-5 border-t border-gray-200">
+              {/* <div className="mt-5 pt-5 border-t border-gray-200">
                 <button className="w-full px-4 py-2 bg-gray-900 text-white rounded-full hover:bg-[#9AE600] hover:text-gray-900 transition-all duration-300 group-hover:scale-105">
-                  View Profile {/*what to do with this? soch rahe console.log daal ke chordh den abhi, baad mein dekhenge, time chahiye, ek profile modal banayenge sabka data display kardenge as per click?? */}
+                  View Profile
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>
@@ -161,7 +160,7 @@ export function FacultiesSection() {
             <h3 className="text-gray-900 mb-1">50+</h3>
             <p className="text-gray-600">Expert Educators</p>
           </div>
-          
+
           <div className="bg-gradient-to-br from-blue-50 to-blue-100/50 p-6 rounded-2xl text-center border border-blue-200">
             <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
               <GraduationCap className="w-6 h-6 text-white" />
@@ -169,7 +168,7 @@ export function FacultiesSection() {
             <h3 className="text-gray-900 mb-1">15+</h3>
             <p className="text-gray-600">Average Years Experience</p>
           </div>
-          
+
           <div className="bg-gradient-to-br from-gray-100 to-gray-50 p-6 rounded-2xl text-center border border-gray-200">
             <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center mx-auto mb-3">
               <BookOpen className="w-6 h-6 text-white" />

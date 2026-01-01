@@ -1,4 +1,10 @@
+import { useState } from "react";
+import ComingSoonModal from "../components/ComingSoonModal";
+
 export default function Academics() {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedSection, setSelectedSection] = useState("");
+
   const sections = [
     {
       title: "Scholarships",
@@ -32,6 +38,11 @@ export default function Academics() {
     },
   ];
 
+  const handleSectionClick = (title: string) => {
+    setSelectedSection(title);
+    setShowModal(true);
+  };
+
   return (
     <div className="py-24 px-6 container mx-auto">
       {/* Title */}
@@ -51,7 +62,7 @@ export default function Academics() {
         {sections.map((sec, i) => (
           <a
             key={i}
-            href={sec.link}
+            onClick={() => handleSectionClick(sec.title)}
             className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300"
           >
             <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
@@ -63,6 +74,14 @@ export default function Academics() {
           </a>
         ))}
       </div>
+
+      {/* comming soon modal */}
+      <ComingSoonModal
+        isOpen={showModal}
+        onClose={() => setShowModal(false)}
+        message={`The "${selectedSection}" section is currently under development. We'll notify you once it's ready!`}
+      />
+
     </div>
   );
 }

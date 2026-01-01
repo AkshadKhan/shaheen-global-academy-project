@@ -23,7 +23,7 @@ export function ToppersSection() {
         name: "Vikram Mehta",
         exam: "NEET",
         score: "718/720",
-        rank: "AIR 23",
+        rank: "23",
         image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
         college: "AIIMS Delhi"
       }

@@ -12,6 +12,9 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation(); //not sure if optimized, it is for going to top of home even if on home page
 
+  //check if on homepage
+  const isHomePage = location.pathname === "/";
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
@@ -95,11 +98,10 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 w-full left-0 right-0 z-50 h-17 transition-all duration-300 ${
-          scrolled
+        className={`fixed top-0 w-full left-0 right-0 z-50 h-17 transition-all duration-300 ${scrolled
             ? "bg-white shadow-md py-2"
             : "bg-white py-4"
-        }`}
+          }`}
       >
         <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between gap-8">
@@ -112,7 +114,7 @@ export function Header() {
               {/* later need to make it to go to home component from anywhere using roupter*/}
               <img
                 src={logo}
-                alt="Shaheen Education Foundation"
+                alt="Shaheen Global Academy"
                 className={`transition-all duration-100
                   ${scrolled ? "h-8" : "h-12"}`}
               />
@@ -139,11 +141,10 @@ export function Header() {
                 {/* later need to make it to go to home component from anywhere using roupter*/}
                 {/* <img src={logo} alt="Shaheen Education Foundation" className="h-14" /> */}
                 <span
-                  className={`transition-all duration-300 relative group font-semibold ${
-                    scrolled
+                  className={`transition-all duration-300 relative group font-semibold ${scrolled
                       ? "text-gray-700 hover:text-gray-900 text-base"
-                      : "text-gray-900 hover:text-[#9AE600] text-xl text-base"
-                  }`}
+                      : "text-gray-900 hover:text-[#9AE600] text-xl"
+                    }`}
                 >
                   {" "}
                   Home{" "}
@@ -154,88 +155,88 @@ export function Header() {
               </Link>
               <Link
                 to="/academics"
-                className={`transition-all duration-300 relative group font-semibold ${
-                  scrolled
+                className={`transition-all duration-300 relative group font-semibold ${scrolled
                     ? "text-gray-700 hover:text-gray-900 text-base"
                     : "text-gray-900 hover:text-[#9AE600] text-xl"
-                }`}
+                  }`}
               >
                 Academics
                 <span
                   className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                 ></span>
               </Link>
-              <a
-                href="#admissions"
-                className={`transition-all duration-300 relative group font-semibold ${
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 text-base"
-                    : "text-gray-900 hover:text-[#9AE600] text-xl"
-                }`}
-              >
-                Admissions {/* admision through fdorms */}
-                <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                ></span>
-              </a>
-              <a
-                href="#enquiry"
-                className={`transition-all duration-300 relative group font-semibold ${
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 text-base"
-                    : "text-gray-900 hover:text-[#9AE600] text-xl"
-                }`}
-              >
-                Enquiry
-                <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                ></span>
-              </a>
-             
-              <a
-                href="#about"
-                className={`transition-all duration-300 relative group font-semibold ${
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 text-base"
-                    : "text-gray-900 hover:text-[#9AE600] text-xl"
-                }`}
-              >
-                About
-                <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                ></span>
-              </a>
-              <a
-                href="#infrastructure"
-                className={`transition-all duration-300 relative group font-semibold ${
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 text-base"
-                    : "text-gray-900 hover:text-[#9AE600] text-xl"
-                }`}
-              >
-                Infrastructure
-                <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                ></span>
-              </a>
+
+              {/* only show on homepage */}
+              {isHomePage && (
+                <>
+                  <a
+                    href="#enquiry"
+                    className={`transition-all duration-300 relative group font-semibold ${scrolled
+                        ? "text-gray-700 hover:text-gray-900 text-base"
+                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      }`}
+                  >
+                    Admissions {/* admision through fdorms */}
+                    <span
+                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                    ></span>
+                  </a>
+                  <a
+                    href="#enquiry"
+                    className={`transition-all duration-300 relative group font-semibold ${scrolled
+                        ? "text-gray-700 hover:text-gray-900 text-base"
+                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      }`}
+                  >
+                    Enquiry
+                    <span
+                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                    ></span>
+                  </a>
+
+                  <a
+                    href="#about"
+                    className={`transition-all duration-300 relative group font-semibold ${scrolled
+                        ? "text-gray-700 hover:text-gray-900 text-base"
+                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      }`}
+                  >
+                    About
+                    <span
+                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                    ></span>
+                  </a>
+                  <a
+                    href="#infrastructure"
+                    className={`transition-all duration-300 relative group font-semibold ${scrolled
+                        ? "text-gray-700 hover:text-gray-900 text-base"
+                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      }`}
+                  >
+                    Infrastructure
+                    <span
+                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                    ></span>
+                  </a>
+                </>
+              )}
+
             </nav>
             {/* Right Side Actions */}{" "}
             {/* somewhat made search working, maybe more work iff needed */}
             <div className="hidden lg:flex items-center gap-4 flex-shrink-0 relative">
               {/* Search Input - Expandable */}
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  searchOpen ? "w-64 opacity-100" : "w-0 opacity-0"
-                }`}
+                className={`overflow-hidden transition-all duration-300 ${searchOpen ? "w-64 opacity-100" : "w-0 opacity-0"
+                  }`}
               >
                 <input
                   type="text"
                   placeholder="Search..."
-                  className={`w-full px-4 py-2 rounded-lg border transition-colors outline-none ${
-                    scrolled
+                  className={`w-full px-4 py-2 rounded-lg border transition-colors outline-none ${scrolled
                       ? "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-[#9AE600]"
                       : "bg-white/80 backdrop-blur-sm border-gray-300 text-gray-900 placeholder-gray-600 focus:border-[#9AE600]"
-                  }`}
+                    }`}
                   autoFocus={searchOpen}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
@@ -245,11 +246,10 @@ export function Header() {
                 {/* Search Results Dropdown */}
                 {showResults && searchOpen && (
                   <div
-                    className={`absolute top-full mt-2 w-64 rounded-lg shadow-lg border overflow-hidden ${
-                      scrolled
+                    className={`absolute top-full mt-2 w-64 rounded-lg shadow-lg border overflow-hidden ${scrolled
                         ? "bg-white border-gray-200"
                         : "bg-white/95 backdrop-blur-md border-gray-300"
-                    }`}
+                      }`}
                   >
                     {searchResults.length > 0 ? (
                       <div className="py-2">
@@ -294,40 +294,35 @@ export function Header() {
               </div>
 
               <button
-                className={`p-2.5 rounded-full transition-colors ${
-                  scrolled ? "hover:bg-gray-200" : "hover:bg-gray-200/50"
-                }`}
+                className={`p-2.5 rounded-full transition-colors ${scrolled ? "hover:bg-gray-200" : "hover:bg-gray-200/50"
+                  }`}
                 aria-label="Search"
                 onClick={() => setSearchOpen(!searchOpen)}
               >
                 <Search
-                  className={`w-5 h-5 ${
-                    scrolled ? "text-gray-700" : "text-gray-900"
-                  }`}
+                  className={`w-5 h-5 ${scrolled ? "text-gray-700" : "text-gray-900"
+                    }`}
                 />
               </button>
               <button
-                className={`px-4 py-2 rounded transition-colors text-sm ${
-                  scrolled
+                className={`px-4 py-2 rounded transition-colors text-sm ${scrolled
                     ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     : "bg-white/20 text-gray-900 hover:bg-white/30 border border-gray-300"
-                }`}
+                  }`}
               >
                 EN
               </button>
             </div>
             {/* Mobile Menu Toggle Button */}
             <button
-              className={`lg:hidden p-2.5 rounded-full transition-colors ${
-                scrolled ? "hover:bg-gray-200" : "hover:bg-gray-200/50"
-              }`}
+              className={`lg:hidden p-2.5 rounded-full transition-colors ${scrolled ? "hover:bg-gray-200" : "hover:bg-gray-200/50"
+                }`}
               aria-label="Menu"
               onClick={() => setMobileMenuOpen(true)}
             >
               <Menu
-                className={`w-6 h-6 ${
-                  scrolled ? "text-gray-700" : "text-gray-900"
-                }`}
+                className={`w-6 h-6 ${scrolled ? "text-gray-700" : "text-gray-900"
+                  }`}
               />
             </button>
           </div>

@@ -36,9 +36,9 @@ export function Hero() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="border border-[#9AE600] text-white px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-[#9AE600] hover:text-gray-900 hover:shadow-lg hover:scale-105 font-semibold">
-                Apply Now {/*goes to same admissin form as above in admission in header*/}
-              </button>
+              <a href='#enquiry' className="border border-[#9AE600] text-white max-w-fit px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-[#9AE600] hover:text-gray-900 hover:shadow-lg hover:scale-105 font-semibold">
+                Visit Now {/*goes to same admissin form as above in admission in header*/}
+              </a>
             </div>
           </div>
 
