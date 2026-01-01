@@ -10,7 +10,7 @@ export function FacultiesSection() {
       qualification: "Ph.D. in Physics",
       specialization: "Quantum Mechanics & Astrophysics",
       department: "mathematics",
-      experience: "15+ Years",
+      experience: "15+",
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
     },
     {
@@ -116,7 +116,7 @@ export function FacultiesSection() {
                 </div>
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#9AE600] px-4 py-1 rounded-full shadow-md">
                   <p className="text-gray-900 text-sm whitespace-nowrap">
-                    {faculty.experience}
+                    {faculty.experience}<span>Years</span>
                   </p>
                 </div>
               </div>

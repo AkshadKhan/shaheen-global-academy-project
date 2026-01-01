@@ -1,45 +1,73 @@
 import { Trophy, Award, TrendingUp, Star } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+// import { data } from 'react-router-dom';
+
+const API_BASE = "http://localhost:3000";
+
+interface Topper {
+  name: string;
+  exam: string;
+  score: string;
+  rank: number;
+  year: number;
+  profilePicture?: string;
+  college?: string;
+}
 
 export function ToppersSection() {
-  const [selectedYear, setSelectedYear] = useState('2024');
+  const [selectedYear, setSelectedYear] = useState<string>("");
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [toppersByYear, setToppersByYear] = useState<Record<string, Topper[]>>({});
 
-//hardcoded data for demonstration
-  const toppers = {
-    '2024': [
-      {
-        name: "Aarav Sharma",
-        exam: "NEET",
-        score: "720/720",
-        rank: "AIR 345612",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-        college: "AIIMS Delhi"
-      }
-    ],
-    '2023': [
-      {
-        name: "Vikram Mehta",
-        exam: "NEET",
-        score: "718/720",
-        rank: "AIR 23",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
-        college: "AIIMS Delhi"
-      }
-    ]
-  };
+  const [toppers, setToppers] = useState<Topper[]>([]);
 
-  const years = ['2024', '2023'];
-  const currentToppers = toppers[selectedYear as keyof typeof toppers];
+  // Fetch toppers data
+
+  useEffect(() => {
+    fetch(`${API_BASE}/api/v1/toppers`).then(res => res.json()).then(data => { // Organize toppers by year
+      const grouped: Record<string, Topper[]> = {};
+
+      data.forEach(t => {
+        const year = String(t.year);
+        if (!grouped[year]) grouped[year] = [];
+        grouped[year].push(t);
+      });
+
+      setToppersByYear(grouped);
+
+      const years = Object.keys(grouped).sort((a, b) => Number(b) - Number(a));
+      if (years.length) setSelectedYear(years[0]);
+    })
+      .catch(err => console.error("Error fetching toppers:", err));
+  }, []);
+
+  // year wise keys, and dynamic data display
+  const years = useMemo(
+    () => Object.keys(toppersByYear).sort((a, b) => Number(b) - Number(a)),
+    [toppersByYear]
+  );
+
+  const currentToppers = useMemo(
+    () => toppersByYear[selectedYear] || [],
+    [toppersByYear, selectedYear]
+  );
+
 
   // Auto-slide effect
   useEffect(() => {
+    if (currentToppers.length <= 3) return;
+
+    const slides = Math.ceil(currentToppers.length / 3);
+
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % currentToppers.length);
+      setCurrentSlide(prev => (prev + 1) % slides);
     }, 4000);
+
     return () => clearInterval(timer);
-  }, [currentToppers.length]);
+  }, [currentToppers]);
+
+  // Render
 
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-20">
@@ -65,11 +93,10 @@ export function ToppersSection() {
                 setSelectedYear(year);
                 setCurrentSlide(0);
               }}
-              className={`px-6 py-2 transition-all duration-300 relative ${
-                selectedYear === year
-                  ? 'text-gray-900'
-                  : 'text-gray-400 hover:text-gray-600'
-              }`}
+              className={`px-6 py-2 transition-all duration-300 relative ${selectedYear === year
+                ? 'text-gray-900'
+                : 'text-gray-400 hover:text-gray-600'
+                }`}
             >
               {year}
               {selectedYear === year && (
@@ -106,20 +133,20 @@ export function ToppersSection() {
                     <div className="relative overflow-hidden rounded-2xl bg-white">
                       {/* Image */}
                       <div className="relative h-80 overflow-hidden">
-                        <img 
-                          src={topper.image} 
+                        <img
+                          src={`${API_BASE}${topper.profilePicture}`} /*src={topper.image}*/
                           alt={topper.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                        
+
                         {/* Rank Badge */}
                         <div className="absolute top-4 right-4">
                           <div className="bg-[#9AE600] text-gray-900 px-4 py-1.5 rounded-full text-sm">
                             <span>AIR {topper.rank}</span>
                           </div>
                         </div>
-                        
+
                         {/* Content Overlay */}
                         <div className="absolute bottom-0 left-0 right-0 p-6">
                           <h3 className="text-white text-xl mb-1">{topper.name}</h3>
@@ -145,11 +172,10 @@ export function ToppersSection() {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index * 3)}
-                className={`transition-all duration-300 ${
-                  Math.floor(currentSlide / 3) === index
-                    ? 'w-8 h-1 bg-[#9AE600]'
-                    : 'w-1 h-1 bg-gray-300 hover:bg-gray-400'
-                } rounded-full`}
+                className={`transition-all duration-300 ${Math.floor(currentSlide / 3) === index
+                  ? 'w-8 h-1 bg-[#9AE600]'
+                  : 'w-1 h-1 bg-gray-300 hover:bg-gray-400'
+                  } rounded-full`}
               />
             ))}
           </div>
@@ -158,7 +184,7 @@ export function ToppersSection() {
         {/* Statistics - Minimal */}
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -168,8 +194,8 @@ export function ToppersSection() {
               <p className="text-4xl text-gray-900 mb-2">600+</p>
               <p className="text-gray-500 text-sm">NEET 2024</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -179,8 +205,8 @@ export function ToppersSection() {
               <p className="text-4xl text-gray-900 mb-2">3400+</p>
               <p className="text-gray-500 text-sm">Doctors</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -190,8 +216,8 @@ export function ToppersSection() {
               <p className="text-4xl text-gray-900 mb-2">150+</p>
               <p className="text-gray-500 text-sm">Top 100</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

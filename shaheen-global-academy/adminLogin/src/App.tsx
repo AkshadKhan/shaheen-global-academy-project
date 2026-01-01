@@ -8,9 +8,9 @@ export default function App() {
     <Routes>
       <Route path="/" element={<AdminLogin />} />
       <Route path="/dashboard" element={
-        //<ProtectedRoute>
+        // <ProtectedRoute>
           <AdminDashboard />
-        //</ProtectedRoute>
+        // </ProtectedRoute>
       } />
     </Routes>
   );

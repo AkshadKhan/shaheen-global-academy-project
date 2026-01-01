@@ -4,25 +4,18 @@ import Topper from "../model/topper.model.js";
 
 
 // Create Topper
-export const topper = async (req, res) => {
+export const topper =  async (req, res) => {
   try {
 
     console.log("filelogs:", req.file); // temp logs
     console.log("bodylogs:", req.body); // temp logs
 
-    const { name, exam, score, rank, year } = req.body;
+    const { name, course, year, marks , totalMarks } = req.body;
     const profilePicture = req.file ? req.file.path : null;
-
-    //backend validation (prevents silent 500s)
-    if (!name || !exam || !score || !rank || !year) {
-      return res.status(400).json({
-        message: "All fields are required",
-      });
-    }
-
-    const topper = new Topper({ name, exam, score, rank, year, profilePicture: req.file ? `/uploads/${req.file.filename}` : null });
+    
+    const topper = new Topper({ name, course, year, marks, totalMarks , profilePicture: req.file ? `/uploads/${req.file.filename}` : null });
     await topper.save();
-
+    
     res.status(201).json({ message: 'Topper created successfully', topper });
   } catch (error) {
     console.error("Error creating topper:", error);
@@ -31,9 +24,9 @@ export const topper = async (req, res) => {
 };
 
 // Get All Toppers
-export const getToppers = async (req, res) => {
+export const getToppers =  async (req, res) => {
   try {
-    const toppers = await Topper.find().sort({ rank: 1 });
+    const toppers = await Topper.find().sort({ marks: -1 });
     res.json(toppers);
   } catch (error) {
     res.status(500).json({ message: 'Error fetching toppers', error: error.message });
@@ -54,33 +47,28 @@ export const getTopper = async (req, res) => {
 };
 
 // Update Topper
-export const updateTopper = async (req, res) => {
+export const updateTopper =  async (req, res) => {
   try {
-    const { name, exam, score, rank, year } = req.body;
-
+    const { name, course, year, marks , totalMarks } = req.body;
     const topper = await Topper.findById(req.params.id);
+    
     if (!topper) {
       return res.status(404).json({ message: 'Topper not found' });
     }
-
+    
     // Delete old image if new one is uploaded
     if (req.file && topper.profilePicture) {
       deleteImage(topper.profilePicture);
     }
-
-    // Update fields
+    
     topper.name = name || topper.name;
-    topper.exam = exam || topper.exam;
-    topper.score = score || topper.score;
-    topper.rank = rank || topper.rank;
+    topper.course = course || topper.course;
     topper.year = year || topper.year;
-
-    if (req.file) {
-      topper.profilePicture = `/uploads/${req.file.filename}`;
-    }
-
+    topper.marks = marks || topper.marks;
+    topper.totalMarks = totalMarks || topper.totalMarks;
+    if (req.file) topper.profilePicture = req.file.path;
+    
     await topper.save();
-
     res.json({ message: 'Topper updated successfully', topper });
   } catch (error) {
     res.status(500).json({ message: 'Error updating topper', error: error.message });
@@ -91,16 +79,16 @@ export const updateTopper = async (req, res) => {
 export const deleteTopper = async (req, res) => {
   try {
     const topper = await Topper.findById(req.params.id);
-
+    
     if (!topper) {
       return res.status(404).json({ message: 'Topper not found' });
     }
-
+    
     // Delete profile picture if exists
     if (topper.profilePicture) {
       deleteImage(topper.profilePicture);
     }
-
+    
     await Topper.findByIdAndDelete(req.params.id);
     res.json({ message: 'Topper deleted successfully' });
   } catch (error) {

@@ -92,7 +92,7 @@ export function Footer() {
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
                 <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Cookie policy</a></li>
-                <li><a href="/login" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
+                <li><a href="http://localhost:5174" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
               </ul>
             </div>
           </div>

@@ -5,7 +5,7 @@ import { Header } from './components/Header';
 import HomePage from "./pages/HomePage";
 import AcademicsPage from "./pages/AcademicsPage";
 import { Footer } from "./components/Footer";
-// import AdminLogin from "./pages/AdminLogin";
+// import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
 
 

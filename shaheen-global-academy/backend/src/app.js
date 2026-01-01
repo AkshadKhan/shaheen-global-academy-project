@@ -3,6 +3,7 @@ import cors from "cors";
 import adminRoutes from "./routes/admin.routes.js";
 import topperRoutes from "./routes/topper.routes.js"
 import teacherRoutes from "./routes/teacher.routes.js"
+import publicRoutes from "./routes/public.routes.js"
 
 const app = express();
 
@@ -27,6 +28,9 @@ app.use(cors({
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Public Routes
+app.use("/api/v1", publicRoutes);
 
 // Routes
 app.use("/api/v1/admin/auth", adminRoutes);
