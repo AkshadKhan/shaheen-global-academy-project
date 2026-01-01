@@ -1,4 +1,4 @@
-import heroImage from '../assets/bg.png';
+import heroImage from '../assets/bg3.png';
 
 export function Hero() {
   return (
@@ -21,22 +21,22 @@ export function Hero() {
           <div className="flex-1 text-white max-w-3xl">
             <div className="space-y-6 mb-12">
               <div className="space-y-3">
-                <h1 className="text-white text-[64px] leading-none tracking-tight" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 0.5)' }}>
+                <h1 className="text-white text-[64px] leading-none tracking-tight" style={{ textShadow: '0 4px 20px rgba(0, 0, 0, 1)' }}>
                   Shaheen Global Academy
                 </h1>
                 <div className="flex items-center gap-3">
                   <div className="h-px w-12 bg-[#9ae600]"></div>
-                  <span className="text-[#9AE600] text-sm tracking-wider uppercase">
+                  <span className="text-[#9AE600] text-sm tracking-wider uppercase" style={{textShadow:'0 4px 20px rgba(0, 0, 0, 1)' }}>
                     Katauli, Lucknow
                   </span>
                 </div>
               </div>
-              <p className="text-white/80 max-w-xl text-xl leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 0.5)' }}>
+              <p className="text-white/80 max-w-xl text-xl leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0, 0, 0, 1)' }}>
                 Empowering students to seize opportunities through excellence in education.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href='#enquiry' className="border border-[#9AE600] text-white max-w-fit px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-[#9AE600] hover:text-gray-900 hover:shadow-lg hover:scale-105 font-semibold">
+              <a href='#enquiry' className="border border-[#9AE600] text-white max-w-fit px-8 py-3.5 rounded-full transition-all duration-300 hover:bg-[#9AE600] hover:text-gray-900 hover:shadow-lg hover:scale-105 font-semibold" style={{textShadow:'0 4px 20px rgba(0, 0, 0, 1)' }}>
                 Visit Now {/*goes to same admissin form as above in admission in header*/}
               </a>
             </div>

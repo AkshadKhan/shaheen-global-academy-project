@@ -1,36 +1,20 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
 
+const images = import.meta.glob('../assets/infrastructure/*.{png,jpg,jpeg}', { eager: true })as Record<string, { default: string }>;
+
 const infrastructureItems = [
-  {
-    id: 1,
-    title: 'Modern Library',
-    description: 'State-of-the-art library with over 50,000 books and digital resources',
-    image: 'https://images.unsplash.com/photo-1531429745839-827a6a45e040?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBsaWJyYXJ5JTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY1Mjc1ODE0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-  },
-  {
-    id: 2,
-    title: 'Science Laboratory',
-    description: 'Fully equipped labs for Physics, Chemistry, and Biology',
-    image: 'https://images.unsplash.com/photo-1707944746620-fc0371b91906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2llbmNlJTIwbGFib3JhdG9yeSUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjUyMTczNjN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-  },
   {
     id: 3,
     title: 'Sports Complex',
     description: 'Multi-purpose sports facilities including cricket, football, and athletics',
-    image: 'https://images.unsplash.com/photo-1734652246537-104c43a68942?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBzdGFkaXVtJTIwZmllbGR8ZW58MXx8fHwxNzY1MTgzNjg0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    image: images["../assets/infrastructure/sports-ground.png"].default
   },
   {
     id: 4,
-    title: 'Computer Labs',
+    title: 'Smart Classrooms',
     description: 'Advanced computer labs with latest technology and high-speed internet',
-    image: 'https://images.unsplash.com/photo-1692133211836-52846376d66f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMGxhYiUyMGNsYXNzcm9vbXxlbnwxfHx8fDE3NjUyNTQ0NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
-  },
-  {
-    id: 5,
-    title: 'Auditorium',
-    description: 'Modern auditorium for cultural events and academic gatherings',
-    image: 'https://images.unsplash.com/photo-1761502479994-3a5e07ec243e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBhdWRpdG9yaXVtJTIwdGhlYXRlcnxlbnwxfHx8fDE3NjUyNzU4MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    image: images["../assets/infrastructure/smartclassroom-image.png"].default
   },
   {
     id: 6,

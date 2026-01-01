@@ -4,63 +4,74 @@ import { useState } from 'react';
 export function FacultiesSection() {
   const [selectedDepartment, setSelectedDepartment] = useState('all');
 
+  const images = import.meta.glob('../assets/faculties/*.{jpg,jpeg,png}', { eager: true }) as Record<string, { default: string }>;
+
   const faculties = [
     {
-      name: "Dr. Rajesh Kumar",
-      qualification: "Ph.D. in Physics",
-      specialization: "Quantum Mechanics & Astrophysics",
-      department: "mathematics",
-      experience: "15+",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+      name: "Syed Yousuf Al Hussaini",
+      qualification: "",
+      specialization: "Head & Director of Shaheen Global Academy",
+      department: "management",
+      experience: "30+",
+      image: images["../assets/faculties/yousuf-hussaini.jpg"].default
     },
     {
-      name: "Prof. Ayesha Khan",
+      name: "Fakhrul Islam Falahi",
+      qualification: "Masters in Languages",
+      specialization: "Director of Academics & Management",
+      department: "management",
+      experience: "10+",
+      image: images["../assets/faculties/fakhrul-islam.jpg"].default
+    },
+    {
+      name: "Prof. Teacherone",
       qualification: "M.Sc., B.Ed.",
       specialization: "Organic Chemistry & Research",
       department: "chemistry",
       experience: "12+ Years",
-      image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop"
+      image: ""
     },
     {
-      name: "Dr. Sanjay Verma",
-      qualification: "Ph.D. in Mathematics",
-      specialization: "Calculus & Applied Mathematics",
-      department: "mathematics",
-      experience: "18+ Years",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
-    },
-    {
-      name: "Ms. Priya Sharma",
-      qualification: "M.A. English Literature",
-      specialization: "Creative Writing & Grammar",
+      name: "Prof. Teachertwo",
+      qualification: "M.Sc., B.Ed.",
+      specialization: "Organic Chemistry & Research",
       department: "chemistry",
-      experience: "10+ Years",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop"
+      experience: "12+ Years",
+      image: ""
     },
     {
-      name: "Prof. Mohammed Hussain",
-      qualification: "M.Sc. Biology, Ph.D.",
-      specialization: "Genetics & Cell Biology",
-      department: "biology",
-      experience: "14+ Years",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop"
+      name: "Prof. Teachertwo",
+      qualification: "M.Sc., B.Ed.",
+      specialization: "Organic Chemistry & Research",
+      department: "chemistry",
+      experience: "12+ Years",
+      image: ""
     },
     {
-      name: "Dr. Neha Gupta",
-      qualification: "Ph.D. in Computer Science",
-      specialization: "AI & Machine Learning",
-      department: "physics",
-      experience: "9+ Years",
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop"
+      name: "Prof. Teachertwo",
+      qualification: "M.Sc., B.Ed.",
+      specialization: "Organic Chemistry & Research",
+      department: "chemistry",
+      experience: "12+ Years",
+      image: ""
+    },
+    {
+      name: "Prof. Teachertwo",
+      qualification: "M.Sc., B.Ed.",
+      specialization: "Organic Chemistry & Research",
+      department: "chemistry",
+      experience: "12+ Years",
+      image: ""
     }
   ];
 
   const departments = [
     { id: 'all', label: 'All Departments' },
     { id: 'mathematics', label: 'Mathematics' },
+    { id: 'physics', label: 'Physics' },
     { id: 'biology', label: 'Biology' },
     { id: 'chemistry', label: 'Chemistry' },
-    { id: 'physics', label: 'Physics' }
+    { id: 'management', label: 'Management' },
   ];
 
   const filteredFaculties = selectedDepartment === 'all'
@@ -88,8 +99,8 @@ export function FacultiesSection() {
               key={dept.id}
               onClick={() => setSelectedDepartment(dept.id)}
               className={`px-6 py-2.5 rounded-full transition-all duration-300 ${selectedDepartment === dept.id
-                  ? 'bg-[#9AE600] text-gray-900 shadow-lg scale-105'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-[#9AE600] text-gray-900 shadow-lg scale-105'
+                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                 }`}
             >
               {dept.label}
@@ -98,7 +109,7 @@ export function FacultiesSection() {
         </div>
 
         {/* Faculty Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto overflow-y-auto max-h-[620px] hide-scrollbar">
           {filteredFaculties.map((faculty, index) => (
             <div
               key={index}

@@ -9,7 +9,7 @@ export default function Terms() {
         <p>
           By accessing or using the Shaheen Global Academy website or mobile
           application (the <strong>“Platform”</strong>), you agree to be bound by
-          these Terms of Use. If you do not agree, please do not use the Platform.
+          these Terms of Use.
         </p>
       </section>
 
@@ -18,8 +18,6 @@ export default function Terms() {
           1. Eligibility & Access
         </h4>
         <ul className="list-disc pl-5 space-y-1">
-          <li>You must be at least 18 years old, or 13–18 with parental consent.</li>
-          <li>Users below the minimum legal age may not use the Platform.</li>
           <li>Registration may require your name, email, and payment (if applicable).</li>
           <li>You agree to provide accurate and up-to-date information.</li>
         </ul>
@@ -30,7 +28,7 @@ export default function Terms() {
           2. Content & Services
         </h4>
         <p>
-          The Platform provides educational content including courses, videos,
+          When The Platform provides educational content including courses, videos,
           live or recorded sessions, and study materials. Access to paid content
           is granted only after successful payment.
         </p>
@@ -55,9 +53,9 @@ export default function Terms() {
           4. User Conduct
         </h4>
         <p>
-          You agree not to post or engage in illegal, abusive, hateful, misleading,
-          harassing, fraudulent, or harmful activities. Any violation may result
-          in suspension or termination without notice.
+          You agree not to spam, harass, or post harmful content. You will not
+          attempt to gain unauthorized access to other accounts or the Platform’s
+          systems.
         </p>
       </section>
 
