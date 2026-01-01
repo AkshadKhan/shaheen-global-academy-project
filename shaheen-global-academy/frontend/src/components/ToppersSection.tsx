@@ -48,7 +48,7 @@ export function ToppersSection() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 mb-3">
             <div className="h-px w-8 bg-[#9AE600]"></div>
-            <span className="text-[#9AE600] text-sm tracking-widest uppercase">Hall of Fame</span>
+            <span className="text-[#9AE600] text-sm tracking-widest uppercase">Shaheeninans</span>
             <div className="h-px w-8 bg-[#9AE600]"></div>
           </div>
           <h2 className="text-gray-900 mb-3">

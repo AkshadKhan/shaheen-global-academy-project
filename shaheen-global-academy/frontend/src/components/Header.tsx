@@ -99,8 +99,8 @@ export function Header() {
     <>
       <header
         className={`fixed top-0 w-full left-0 right-0 z-50 h-17 transition-all duration-300 ${scrolled
-            ? "bg-white shadow-md py-2"
-            : "bg-white py-4"
+          ? "bg-white shadow-md py-2"
+          : "bg-white py-4"
           }`}
       >
         <div className="container mx-auto px-6 py-5">
@@ -118,11 +118,6 @@ export function Header() {
                 className={`transition-all duration-100
                   ${scrolled ? "h-8" : "h-12"}`}
               />
-              {/* <span className={`ml-auto transition-all duration-300 relative group font-semibold ${scrolled
-                ? 'text-gray-700 hover:text-gray-900 text-base'
-                : 'text-gray-900 hover:text-[#9AE600] text-xl'
-                }`}
-              > Home </span> */}
               <span
                 className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
               ></span>
@@ -138,12 +133,10 @@ export function Header() {
                 className="flex items-center flex-shrink-0 cursor-pointer"
               >
                 {" "}
-                {/* later need to make it to go to home component from anywhere using roupter*/}
-                {/* <img src={logo} alt="Shaheen Education Foundation" className="h-14" /> */}
                 <span
                   className={`transition-all duration-300 relative group font-semibold ${scrolled
-                      ? "text-gray-700 hover:text-gray-900 text-base"
-                      : "text-gray-900 hover:text-[#9AE600] text-xl"
+                    ? "text-gray-700 hover:text-gray-900 text-base"
+                    : "text-gray-900 hover:text-[#9AE600] text-xl"
                     }`}
                 >
                   {" "}
@@ -156,8 +149,8 @@ export function Header() {
               <Link
                 to="/academics"
                 className={`transition-all duration-300 relative group font-semibold ${scrolled
-                    ? "text-gray-700 hover:text-gray-900 text-base"
-                    : "text-gray-900 hover:text-[#9AE600] text-xl"
+                  ? "text-gray-700 hover:text-gray-900 text-base"
+                  : "text-gray-900 hover:text-[#9AE600] text-xl"
                   }`}
               >
                 Academics
@@ -172,8 +165,8 @@ export function Header() {
                   <a
                     href="#enquiry"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
-                        ? "text-gray-700 hover:text-gray-900 text-base"
-                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      ? "text-gray-700 hover:text-gray-900 text-base"
+                      : "text-gray-900 hover:text-[#9AE600] text-xl"
                       }`}
                   >
                     Admissions {/* admision through fdorms */}
@@ -184,8 +177,8 @@ export function Header() {
                   <a
                     href="#enquiry"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
-                        ? "text-gray-700 hover:text-gray-900 text-base"
-                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      ? "text-gray-700 hover:text-gray-900 text-base"
+                      : "text-gray-900 hover:text-[#9AE600] text-xl"
                       }`}
                   >
                     Enquiry
@@ -197,8 +190,8 @@ export function Header() {
                   <a
                     href="#about"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
-                        ? "text-gray-700 hover:text-gray-900 text-base"
-                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      ? "text-gray-700 hover:text-gray-900 text-base"
+                      : "text-gray-900 hover:text-[#9AE600] text-xl"
                       }`}
                   >
                     About
@@ -209,8 +202,8 @@ export function Header() {
                   <a
                     href="#infrastructure"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
-                        ? "text-gray-700 hover:text-gray-900 text-base"
-                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                      ? "text-gray-700 hover:text-gray-900 text-base"
+                      : "text-gray-900 hover:text-[#9AE600] text-xl"
                       }`}
                   >
                     Infrastructure
@@ -234,8 +227,8 @@ export function Header() {
                   type="text"
                   placeholder="Search..."
                   className={`w-full px-4 py-2 rounded-lg border transition-colors outline-none ${scrolled
-                      ? "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-[#9AE600]"
-                      : "bg-white/80 backdrop-blur-sm border-gray-300 text-gray-900 placeholder-gray-600 focus:border-[#9AE600]"
+                    ? "bg-white border-gray-300 text-gray-900 placeholder-gray-500 focus:border-[#9AE600]"
+                    : "bg-white/80 backdrop-blur-sm border-gray-300 text-gray-900 placeholder-gray-600 focus:border-[#9AE600]"
                     }`}
                   autoFocus={searchOpen}
                   value={searchQuery}
@@ -247,8 +240,8 @@ export function Header() {
                 {showResults && searchOpen && (
                   <div
                     className={`absolute top-full mt-2 w-64 rounded-lg shadow-lg border overflow-hidden ${scrolled
-                        ? "bg-white border-gray-200"
-                        : "bg-white/95 backdrop-blur-md border-gray-300"
+                      ? "bg-white border-gray-200"
+                      : "bg-white/95 backdrop-blur-md border-gray-300"
                       }`}
                   >
                     {searchResults.length > 0 ? (
@@ -306,8 +299,8 @@ export function Header() {
               </button>
               <button
                 className={`px-4 py-2 rounded transition-colors text-sm ${scrolled
-                    ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    : "bg-white/20 text-gray-900 hover:bg-white/30 border border-gray-300"
+                  ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  : "bg-white/20 text-gray-900 hover:bg-white/30 border border-gray-300"
                   }`}
               >
                 EN
@@ -345,7 +338,7 @@ export function Header() {
               <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <img
                   src={logo}
-                  alt="Shaheen Education Foundation"
+                  alt="Shaheen Global Academy"
                   className="h-12"
                 />
                 <button
@@ -359,48 +352,55 @@ export function Header() {
 
               {/* Mobile Navigation */}
               <nav className="flex flex-col p-6 gap-2 flex-1 overflow-y-auto">
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
                   onClick={handleMobileLinkClick}
                 >
                   Home
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/academics"
                   className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
                   onClick={handleMobileLinkClick}
                 >
                   Academics
-                </a>
-                <a
-                  href="#"
-                  className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                  onClick={handleMobileLinkClick}
-                >
-                  Admissions
-                </a>
-                <a
-                  href="#enquiry"
-                  className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                  onClick={handleMobileLinkClick}
-                >
-                  Enquiry
-                </a>
-                <a
-                  href="#about"
-                  className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                  onClick={handleMobileLinkClick}
-                >
-                  About
-                </a>
-                <a
-                  href="#"
-                  className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                  onClick={handleMobileLinkClick}
-                >
-                  Infrastructure
-                </a>
+                </Link>
+
+                {/* only show on homepage */}
+                {isHomePage && (
+                  <>
+                    <a
+                      href="#enquiry"
+                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                      onClick={handleMobileLinkClick}
+                    >
+                      Admissions
+                    </a>
+                    <a
+                      href="#enquiry"
+                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                      onClick={handleMobileLinkClick}
+                    >
+                      Enquiry
+                    </a>
+                    <a
+                      href="#about"
+                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                      onClick={handleMobileLinkClick}
+                    >
+                      About
+                    </a>
+                    <a
+                      href="#"
+                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                      onClick={handleMobileLinkClick}
+                    >
+                      Infrastructure
+                    </a>
+                  </>
+                )}
+
               </nav>
 
               {/* Mobile Menu Footer */}

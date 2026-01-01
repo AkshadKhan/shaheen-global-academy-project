@@ -1,10 +1,14 @@
 import logo from '../assets/logo.png';
-import { Mail } from 'lucide-react';
+// import { Mail } from 'lucide-react';
 import { useState } from 'react';
 import ComingSoonModal from './ComingSoonModal';
+import Modal from './Modal';
+import Terms from '../pages/Terms';
+import PrivacyPolicy from '../pages/PrivacyPolicy';
 
 export function Footer() {
   const [showModal, setShowModal] = useState(false);
+  const [openModal, setOpenModal] = useState<'terms' | 'privacy' | null>(null);
 
   return (
     <footer className="bg-gray-50">
@@ -67,12 +71,12 @@ export function Footer() {
             <div>
               <h4 className="text-white mb-4">Quick links</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Admission</a></li>
+                <li><a href="#enquiry" className="text-gray-400 hover:text-lime-400 transition-colors">Admission</a></li>
                 <li><a href="https://www.google.com/maps/search/Shaheen+Global+Academy+Dr.+Abdul+Ali+Tibbiya+College+Road+Katauli+Malihabad+Lucknow+Uttar+Pradesh+226102" className="text-gray-400 hover:text-lime-400 transition-colors">Address</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Programs</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">About us</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">FAQ</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Contact us</a></li>
+                <li><a href="#courses" className="text-gray-400 hover:text-lime-400 transition-colors">Courses</a></li>
+                <li><a href="#about" className="text-gray-400 hover:text-lime-400 transition-colors">About us</a></li>
+                <li><a href="#enquiry" className="text-gray-400 hover:text-lime-400 transition-colors">FAQ</a></li>
+                <li><a href="#enquiry" className="text-gray-400 hover:text-lime-400 transition-colors">Contact us</a></li>
                 {/* <li><a href="/login" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li> */}
               </ul>
             </div>
@@ -81,11 +85,11 @@ export function Footer() {
             <div>
               <h4 className="text-white mb-4">Social</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Facebook</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Instagram</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">LinkedIn</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Twitter</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Youtube</a></li>
+                <li><a href="https://www.facebook.com/shaheenlucknow/" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Facebook</a></li>
+                <li><a href="https://www.instagram.com/shaheenglobalacademy" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/fakhrul-islam-34748a138/" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">LinkedIn</a></li>
+                <li><a href="https://twitter.com/Shaheengrouporg" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Twitter</a></li>
+                <li><a href="https://www.youtube.com/@shaheengroupofinstitutions" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Youtube</a></li>
               </ul>
             </div>
 
@@ -93,9 +97,8 @@ export function Footer() {
             <div>
               <h4 className="text-white mb-4">Legal</h4>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-lime-400 transition-colors">Cookie policy</a></li>
+                <li><a onClick={() => setOpenModal("terms")} className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
+                <li><a onClick={() => setOpenModal("privacy")} className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
                 <li><a onClick={() => setShowModal(true)} className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
               </ul>
             </div>
@@ -115,6 +118,24 @@ export function Footer() {
         onClose={() => setShowModal(false)}
         message="Admin Login portal is currently under development. We'll notify you once it's ready!"
       />
+
+      {/* Terms Modal */}
+      <Modal
+        isOpen={openModal === 'terms'}
+        onClose={() => setOpenModal(null)}
+        title="Terms of Service"
+      >
+        <Terms />
+      </Modal>
+
+      {/* Privacy Modal */}
+      <Modal
+        isOpen={openModal === 'privacy'}
+        onClose={() => setOpenModal(null)}
+        title="Privacy Policy"
+      >
+        <PrivacyPolicy />
+      </Modal>
     </footer>
   );
 }

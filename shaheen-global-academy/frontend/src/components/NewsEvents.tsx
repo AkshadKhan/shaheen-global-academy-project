@@ -9,7 +9,7 @@ export function NewsEvents() {
           <div className="flex-1 space-y-10">
             {/* Why Shaheen Section */}
             <div>
-              <h2 className="text-gray-900 mb-6">Why Shaheen?</h2>
+              <h2 className="text-gray-900 mb-6 font-semibold">Why Shaheen?</h2>
               <p className="text-gray-700 leading-relaxed">
                 SHAHEEN is a leading educational institution in India. At SHAHEEN we aim at grooming leaders who are not only skilled professionals but also good human beings with values and morale. This is why we are consistently growing and achieving excellence.
               </p>
