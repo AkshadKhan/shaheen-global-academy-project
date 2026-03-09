@@ -6,25 +6,30 @@ export function ToppersSection() {
   const [selectedYear, setSelectedYear] = useState('2024');
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  const images = import.meta.glob('../assets/toppers/*.{png,jpg,jpeg,webp}', {
+  eager: true,
+  import: 'default'
+});
+
 //hardcoded data for demonstration
   const toppers = {
     '2024': [
       {
-        name: "Aarav Sharma",
+        name: "Student A",
         exam: "NEET",
         score: "720/720",
-        rank: "AIR 345612",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
+        rank: "345612",
+        image: images["../assets/toppers/student1.jpg"],
         college: "AIIMS Delhi"
       }
     ],
     '2023': [
       {
-        name: "Vikram Mehta",
+        name: "Student B",
         exam: "NEET",
         score: "718/720",
         rank: "23",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop",
+        image: images["../assets/toppers/student2.jpg"],
         college: "AIIMS Delhi"
       }
     ]
@@ -166,7 +171,7 @@ export function ToppersSection() {
               className="text-center"
             >
               <p className="text-4xl text-gray-900 mb-2">600+</p>
-              <p className="text-gray-500 text-sm">NEET 2024</p>
+              <p className="text-gray-500 text-sm">NEET Qualifiers</p>
             </motion.div>
             
             <motion.div 
@@ -177,7 +182,7 @@ export function ToppersSection() {
               className="text-center"
             >
               <p className="text-4xl text-gray-900 mb-2">3400+</p>
-              <p className="text-gray-500 text-sm">Doctors</p>
+              <p className="text-gray-500 text-sm">Alumini Doctors</p>
             </motion.div>
             
             <motion.div 

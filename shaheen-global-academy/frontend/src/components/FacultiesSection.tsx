@@ -22,46 +22,6 @@ export function FacultiesSection() {
       department: "management",
       experience: "10+",
       image: images["../assets/faculties/fakhrul-islam.jpg"].default
-    },
-    {
-      name: "Prof. Teacherone",
-      qualification: "M.Sc., B.Ed.",
-      specialization: "Organic Chemistry & Research",
-      department: "chemistry",
-      experience: "12+ Years",
-      image: ""
-    },
-    {
-      name: "Prof. Teachertwo",
-      qualification: "M.Sc., B.Ed.",
-      specialization: "Organic Chemistry & Research",
-      department: "chemistry",
-      experience: "12+ Years",
-      image: ""
-    },
-    {
-      name: "Prof. Teachertwo",
-      qualification: "M.Sc., B.Ed.",
-      specialization: "Organic Chemistry & Research",
-      department: "chemistry",
-      experience: "12+ Years",
-      image: ""
-    },
-    {
-      name: "Prof. Teachertwo",
-      qualification: "M.Sc., B.Ed.",
-      specialization: "Organic Chemistry & Research",
-      department: "chemistry",
-      experience: "12+ Years",
-      image: ""
-    },
-    {
-      name: "Prof. Teachertwo",
-      qualification: "M.Sc., B.Ed.",
-      specialization: "Organic Chemistry & Research",
-      department: "chemistry",
-      experience: "12+ Years",
-      image: ""
     }
   ];
 
@@ -168,7 +128,7 @@ export function FacultiesSection() {
             <div className="w-12 h-12 bg-[#9AE600] rounded-full flex items-center justify-center mx-auto mb-3">
               <Award className="w-6 h-6 text-gray-900" />
             </div>
-            <h3 className="text-gray-900 mb-1">50+</h3>
+            <h3 className="text-gray-900 mb-1">20+</h3>
             <p className="text-gray-600">Expert Educators</p>
           </div>
 

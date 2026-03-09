@@ -33,7 +33,7 @@ export function NewsEvents() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-600 mr-3 mt-1">•</span>
-                  <span className="text-gray-800"><span className="text-blue-700">40</span> learning centres spread across <span className="text-blue-700">9 states</span></span>
+                  <span className="text-gray-800"><span className="text-blue-700">50+</span> learning centres spread across <span className="text-blue-700">9 states</span></span>
                 </li>
               </ul>
 
