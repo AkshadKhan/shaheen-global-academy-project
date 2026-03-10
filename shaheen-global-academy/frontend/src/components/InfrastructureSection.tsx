@@ -1,26 +1,39 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
+import { desc } from 'framer-motion/client';
 
 const images = import.meta.glob('../assets/infrastructure/*.{png,jpg,jpeg}', { eager: true })as Record<string, { default: string }>;
 
 const infrastructureItems = [
   {
-    id: 3,
+    id: 1,
     title: 'Sports Complex',
     description: 'Multi-purpose sports facilities including cricket, football, and athletics',
     image: images["../assets/infrastructure/sports-ground.png"].default
   },
   {
-    id: 4,
+    id: 2,
     title: 'Smart Classrooms',
     description: 'Advanced computer labs with latest technology and high-speed internet',
     image: images["../assets/infrastructure/smartclassroom-image.png"].default
   },
   {
-    id: 6,
-    title: 'Cafeteria',
-    description: 'Spacious dining area serving nutritious and hygienic meals',
-    image: 'https://images.unsplash.com/photo-1559759043-8e2e08d9c932?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzY2hvb2wlMjBjYWZldGVyaWElMjBkaW5pbmd8ZW58MXx8fHwxNzY1Mjc1ODE2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+    id: 3,
+    title: 'Computer Labs',
+    description: 'State-of-the-art computer labs with latest technology and high-speed internet',
+    image: images["../assets/infrastructure/computer-lab.png"].default
+  },
+  {
+    id: 4,
+    title: 'Auditorium',
+    description: 'Large auditorium for events, seminars, and cultural programs',
+    image: images["../assets/infrastructure/auditorium.jpg"].default
+  },
+  {
+    id: 5,
+    title: 'Reception Lounge',
+    description: 'Welcoming reception area with comfortable seating and modern design',
+    image: images["../assets/infrastructure/reception-lounge.png"].default
   }
 ];
 

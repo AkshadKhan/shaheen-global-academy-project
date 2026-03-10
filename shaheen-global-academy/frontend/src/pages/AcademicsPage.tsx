@@ -12,43 +12,42 @@ export default function Academics() {
       title: "Prospectus",
       desc: "Comprehensive guide to our academic offerings, policies and campus life.",
       link: "/documents/Prospectus-2025.pdf",
-      type: "pdf"
+      type: "pdf",
+    },
+    {
+      title: "Admission Form",
+      desc: "Download and submit admission forms for various programs.",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSeQSwPO2eLsrKp5X34Fa4JCHwiRDXOVSmq19fq4yOHN138kvg/viewform?usp=dialog",
+      type: "external",
+    },
+    {
+      title: "Academic Calendar",
+      desc: "View schedules, examination timelines and important academic dates.",
+      link: "/documents/academic-calendar-test.pdf"
     },
     {
       title: "Scholarships",
       desc: "Merit-based, need-based and talent scholarships for deserving students.",
       link: "/academics/scholarships",
-      comingSoon: true
-    },
-    {
-      title: "Admission Forms",
-      desc: "Download and submit admission forms for various programs.",
-      link: "/academics/admission-forms",
-      comingSoon: true
+      comingSoon: true,
     },
     {
       title: "Syllabus",
       desc: "Structured syllabus for NEET, JEE, Foundation & other academic streams.",
       link: "/academics/syllabus",
-      comingSoon: true
+      comingSoon: true,
     },
     {
       title: "E-Library",
       desc: "Access digital books, notes, question banks and study material.",
       link: "/academics/e-library",
-      comingSoon: true
+      comingSoon: true,
     },
     {
       title: "Programs Offered",
       desc: "Explore the diverse academic programs we offer.",
       link: "/academics/programs",
-      comingSoon: true
-    },
-    {
-      title: "Academic Calendar",
-      desc: "View schedules, examination timelines and important academic dates.",
-      link: "/academics/calendar",
-      comingSoon: true
+      comingSoon: true,
     },
   ];
 
@@ -56,14 +55,10 @@ export default function Academics() {
     if (sec.comingSoon) {
       setSelectedSection(sec.title);
       setShowModal(true);
-      return
+      return;
     }
 
-    if (sec.type === "pdf") {
-      window.open(sec.link, "_blank");
-    } else {
-      navigate(sec.link);
-    }
+    window.open(sec.link, "_blank");
   };
 
   return (

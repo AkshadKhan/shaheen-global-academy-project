@@ -18,7 +18,7 @@ export function ToppersSection() {
         name: "Student A",
         exam: "NEET",
         score: "720/720",
-        rank: "345612",
+        rank: "123",
         image: images["../assets/toppers/student1.jpg"],
         college: "AIIMS Delhi"
       }
@@ -28,7 +28,7 @@ export function ToppersSection() {
         name: "Student B",
         exam: "NEET",
         score: "718/720",
-        rank: "23",
+        rank: "321",
         image: images["../assets/toppers/student2.jpg"],
         college: "AIIMS Delhi"
       }
