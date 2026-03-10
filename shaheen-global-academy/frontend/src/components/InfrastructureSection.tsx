@@ -26,7 +26,7 @@ const infrastructureItems = [
     id: 4,
     title: 'Auditorium',
     description: 'Large auditorium for events, seminars, and cultural programs',
-    image: images["../assets/infrastructure/auditorium.jpg"].default
+    image: images["../assets/infrastructure/auditorium.png"].default
   },
   {
     id: 5,
