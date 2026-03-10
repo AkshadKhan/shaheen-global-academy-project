@@ -1,4 +1,3 @@
-import { Trophy, Award, TrendingUp, Star } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 

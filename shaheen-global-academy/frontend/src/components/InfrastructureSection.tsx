@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { X } from 'lucide-react';
-import { desc } from 'framer-motion/client';
 
 const images = import.meta.glob('../assets/infrastructure/*.{png,jpg,jpeg}', { eager: true })as Record<string, { default: string }>;
 

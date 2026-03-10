@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import ComingSoonModal from "../components/ComingSoonModal";
 
 export default function Academics() {
   const [showModal, setShowModal] = useState(false);
   const [selectedSection, setSelectedSection] = useState("");
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const sections = [
     {

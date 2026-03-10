@@ -1,4 +1,3 @@
-import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { NewsEvents } from '../components/NewsEvents';
 import { CoursesSection } from '../components/CoursesSection';

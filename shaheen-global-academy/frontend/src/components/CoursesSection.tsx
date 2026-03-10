@@ -1,5 +1,4 @@
-import { desc } from 'framer-motion/client';
-import { Users, Award, GraduationCapIcon, LibraryBig, Smartphone, PhoneOffIcon, LucideSmartphone, LucideSmartphoneNfc, AlignHorizontalSpaceBetween, SmartphoneCharging, SectionIcon, ScanFace } from 'lucide-react';
+import { Users, Award, GraduationCapIcon, LibraryBig, Smartphone, AlignHorizontalSpaceBetween } from 'lucide-react';
 
 export function CoursesSection() {
   const features = [
