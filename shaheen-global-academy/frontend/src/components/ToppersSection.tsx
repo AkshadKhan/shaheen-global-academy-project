@@ -111,7 +111,7 @@ export function ToppersSection() {
                       {/* Image */}
                       <div className="relative h-80 overflow-hidden">
                         <img 
-                          src={topper.image} 
+                          src={String(topper.image)}
                           alt={topper.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
