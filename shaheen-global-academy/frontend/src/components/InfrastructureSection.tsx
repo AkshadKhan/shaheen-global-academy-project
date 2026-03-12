@@ -17,12 +17,6 @@ const infrastructureItems = [
     image: images["../assets/infrastructure/smartclassroom-image.png"].default
   },
   {
-    id: 3,
-    title: 'Computer Labs',
-    description: 'State-of-the-art computer labs with latest technology and high-speed internet',
-    image: images["../assets/infrastructure/computer-lab.png"].default
-  },
-  {
     id: 4,
     title: 'Auditorium',
     description: 'Large auditorium for events, seminars, and cultural programs',
