@@ -14,22 +14,22 @@ export function ToppersSection() {
   const toppers = {
     '2024': [
       {
-        // name: "Student A",
-        // exam: "NEET",
-        // score: "720/720",
-        // rank: "123",
-        // image: images["../assets/toppers/student1.jpg"],
-        // college: "AIIMS Delhi"
+        name: "Student A",
+        exam: "NEET",
+        score: "720/720",
+        rank: "123",
+        image: images["../assets/toppers/testImage.png"],
+        college: "AIIMS Delhi"
       }
     ],
     '2023': [
       {
-        // name: "Student B",
-        // exam: "NEET",
-        // score: "718/720",
-        // rank: "321",
-        // image: images["../assets/toppers/student2.jpg"],
-        // college: "AIIMS Delhi"
+        name: "Student B",
+        exam: "NEET",
+        score: "718/720",
+        rank: "321",
+        image: images["../assets/toppers/testImage.png"],
+        college: "AIIMS Delhi"
       }
     ]
   };
