@@ -86,7 +86,7 @@ export function Hero() {
             <div className="space-y-6 mb-12">
               <div className="space-y-3">
                 <h1
-                  className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] leading-[1.1] tracking-tight"
+                  className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] leading-[1.1] tracking-tight"
                   style={{ textShadow: "0 4px 20px rgba(0, 0, 0, 1)" }}
                 >
                   Shaheen Global Academy
