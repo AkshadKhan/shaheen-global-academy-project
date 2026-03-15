@@ -3,24 +3,54 @@ import { GraduationCapIcon, LibraryBig, AlignHorizontalSpaceBetween, BookOpenChe
 export function CoursesSection() {
   const features = [
     {
-      icon: BookOpenCheck,
-      title: "Special Class Sessions",
-      description: "Dedicated doubt-clearing, revision, and topic-based sessions to ensure no student is left behind. Personalized attention for every learner."
-    },
-    {
       icon: LibraryBig,
-      title: "Hifzul-Quran Program",
-      description: "The Hifzul Quran Plus (or Hifz Plus) is a flagship program of the Shaheen Group of Institutions designed to integrate students who have completed memorizing the Quran (Huffaz) into mainstream modern education."
+      title: "Hifzul-Quran Plus Program",
+      description: (
+        <>
+          The Hifzul Quran Plus (or Hifz Plus) is a flagship program of the Shaheen Group of Institutions <span className="bg-green-200 px-1 rounded">designed to integrate students who have completed memorizing the Quran (Huffaz) into mainstream modern education.</span>
+        </>
+      )
     },
     {
       icon: GraduationCapIcon,
-      title: "11th & 12th Integrated Program",
-      description: "The Shaheen Academy 11th and 12th integrated program is a two-year residential course designed to combine standard board education with intensive competitive exam preparation."
+      title: "11th & 12th Integrated with NEET/JEE",
+      description: (
+        <>
+          The Shaheen Academy 11th and 12th integrated program is a <span className="bg-blue-200 px-1 rounded">two-year residential course</span> designed to combine standard board education with intensive competitive exam preparation.
+        </>
+      )
+    },
+    {
+      icon: GraduationCapIcon,
+      title: "Three Year NEET Integrated Program",
+      description: (
+        <>
+          A comprehensive three-year residential program that <span className='bg-yellow-200 px-1 rounded'>integrates NEET/JEE preparation with a strong foundation course,</span> designed for students starting after Class 9 or 10 to build concepts early and excel in medical entrance exams.
+        </>
+      )
+    },
+    {
+      icon: GraduationCapIcon,
+      title: "Four Year NEET/JEE Integrated Program",
+      description: (
+        <>
+          A rigorous four-year residential program <span className="bg-pink-200 px-1 rounded">designed for students who have passed Class VIII</span>, integrating NEET/JEE preparation with foundational academic excellence from an early stage.
+        </>
+      )
     },
     {
       icon: AlignHorizontalSpaceBetween,
       title: "NEET Repeater Program",
       description: "A one-year intensive training program for students who have completed Class 12 and are dedicated to clearing the medical entrance exam."
+    },
+    {
+      icon: BookOpenCheck,
+      title: "Special Class Sessions",
+      description: (
+        <>
+          Dedicated <span className="bg-red-200 px-1 rounded">doubt-clearing, revision, and topic-based sessions</span> to ensure no student is left behind. Personalized attention for every learner.
+        </>
+      )
     }
   ];
 
@@ -28,12 +58,18 @@ export function CoursesSection() {
     <section id='courses' className="bg-gray-200 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-blue-600 mb-2 font-semibold">Courses</p>
-          <h2 className="text-gray-800 mb-4">
+          <p className="text-blue-600 mb-2 font-semibold text-2xl">Courses</p>
+          <h2 className="text-gray-800 mb-4 text-xl">
             Offered by Shaheen Global Academy
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover a learning experience designed to help you achieve your goals. We combines cutting-edge technology with proven teaching methods.
+            Discover a learning experience designed to help you achieve your goals. We combines cutting-edge technology with proven teaching methods. {' '}
+            <a
+              href="/academics#prospectus"
+              className="text-blue-700 hover:text-blue-900 font-medium ml-1"
+            >
+              View Prospectus
+            </a>
           </p>
         </div>
 

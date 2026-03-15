@@ -58,8 +58,8 @@ export function FacilitiesSection() {
     <section className="bg-gradient-to-b from-blue-50 to-white py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <p className="text-blue-600 mb-2">Why to Join Shaheen Global Academy</p>
-          <h2 className="text-gray-900 mb-4">
+          <p className="text-blue-600 text-2xl font-semibold mb-2">Why to Join Shaheen Global Academy</p>
+          <h2 className="text-gray-900 text-xl mb-4">
             Facilities
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
