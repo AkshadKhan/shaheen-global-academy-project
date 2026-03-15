@@ -24,19 +24,27 @@ export const faculties = [
     image: "fakhrul-islam.jpg"
   },
   {
-    name: "Mr. Adeel Ahmed",
+    name: "Mr. Adeel Iqbal Khan",
     qualification: "Masters in Physics",
     specialization: "Applied Physics",
     department: "physics",
+    experience: "8+",
+    image: "testImage.png"
+  },
+  {
+    name: "Dr. Rehanuddin Siddiqui",
+    qualification: "PhD in Botany",
+    specialization: "Botany",
+    department: "biology",
     experience: "10+",
     image: "testImage.png"
   },
   {
-    name: "Mr. Rehan Khan",
-    qualification: "Masters in Biology",
-    specialization: "Zoology",
-    department: "biology",
-    experience: "15+",
+    name: "Dr. Usama",
+    qualification: "PhD in Chemistry",
+    specialization: "Chemistry",
+    department: "chemistry",
+    experience: "10+",
     image: "testImage.png"
   }
 ];

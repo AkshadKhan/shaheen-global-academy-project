@@ -22,7 +22,7 @@ export function FacultiesSection() {
 
   return (
     <section className="bg-white py-20">
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 ">
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-[#9AE600] mb-2">Meet Our Educators</p>
@@ -51,7 +51,7 @@ export function FacultiesSection() {
         </div>
 
         {/* Faculty Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto overflow-y-auto max-h-[620px] hide-scrollbar">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto overflow-y-auto max-h-[620px] pb-6 hide-scrollbar">
           {filteredFaculties.map((faculty, index) => (
             <div
               key={index}

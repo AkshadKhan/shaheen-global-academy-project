@@ -1,9 +1,9 @@
-import { Phone, MessageCircle, Mail, Clock } from 'lucide-react';
+import { Phone, Mail, Clock, MessageCircleDashed, MapPin } from 'lucide-react';
 
 export function EnquirySection() {
   const phoneNumber = "+91-090444 42494";
   const whatsappNumber = "+918050020345";
-  const email = "info@shaheeneducation.org";
+  const email = "shaheenglobalacademy@gmail.com";
 
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`;
@@ -19,7 +19,7 @@ export function EnquirySection() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-gray-900 via-[#101828] to-gray-900 py-20 relative overflow-hidden">
+    <section className="bg-gradient-to-br from-gray-900 via-[#101828] to-gray-900 py-6 relative overflow-hidden">
       {/* Background Accents */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-64 h-64 bg-[#9AE600] rounded-full blur-3xl"></div>
@@ -28,9 +28,9 @@ export function EnquirySection() {
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-6">
           <p className="text-[#9AE600] mb-2">Get in Touch</p>
-          <h2 className="text-white mb-4">
+          <h2 className="text-white mb-2">
             Quick Enquiry
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto">
@@ -39,7 +39,7 @@ export function EnquirySection() {
         </div>
 
         {/* Contact Options */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-6">
           {/* Phone Card */}
           <button
             onClick={handleCall}
@@ -70,7 +70,7 @@ export function EnquirySection() {
             className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-2xl hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-[#9AE600]/50 group"
           >
             <div className="w-16 h-16 bg-gradient-to-br from-[#25D366] to-[#128C7E] rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-              <MessageCircle className="w-8 h-8 text-white" />
+              <MessageCircleDashed className="w-8 h-8 text-white" />
             </div>
             <h3 className="text-white mb-2">
               WhatsApp Chat
@@ -112,16 +112,34 @@ export function EnquirySection() {
             </div>
           </button>
         </div>
+        
 
         {/* Additional Info */}
-        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 max-w-3xl mx-auto">
-          <div className="flex items-center justify-center gap-3 text-gray-300">
-            <Clock className="w-5 h-5 text-[#9AE600]" />
-            <p>
-              Available Monday - Saturday | 9:00 AM - 6:00 PM
-            </p>
+
+        <div className="flex flex-row gap-6 justify-center items-stretch mb-10">
+          <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 max-w-3xl w-full flex items-center justify-center">
+            <div className="flex items-center gap-3 text-gray-300">
+              <Clock className="w-5 h-5 text-[#9AE600]" />
+              <p>
+                Available Monday - Saturday | 9:00 AM - 6:00 PM
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Shaheen+Global+Academy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-4 py-2 md:py-3 h-full border border-white/10 rounded-full text-[#9AE600] hover:bg-[#9AE600]/70 transition-colors duration-300 shadow group"
+            >
+              <MapPin className="w-5 h-5 md:w-6 md:h-6 text-[#9AE600] group-hover:text-white transition-colors duration-300" />
+              <span className="text-sm md:text-base font-medium group-hover:text-white transition-colors duration-300">Locate</span>
+              <span className="text-sm md:text-base font-medium group-hover:text-white transition-colors duration-300">Us</span>
+            </a>
           </div>
         </div>
+
+        
 
         {/* Quick Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-4xl mx-auto">
