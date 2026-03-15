@@ -62,7 +62,7 @@ export function Footer() {
                 </div>
                 <div>
                   <span className="text-gray-500">Email</span>
-                  <p>info@shaheeneducation.org</p>
+                  <p>shaheenglobalacademy@gmail.com</p>
                 </div>
                 </div>
             </div>

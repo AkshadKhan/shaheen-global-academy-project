@@ -1,5 +1,5 @@
 import rightImage from "../assets/image-2.png";
-import toppersImage from "../assets/image-1.png";
+import toppersImage from "../assets/image-3.png";
 
 export function NewsEvents() {
   return (
@@ -125,7 +125,7 @@ export function NewsEvents() {
 
           {/* Right Image */}
           <div className="flex-1">
-            <div className="rounded-xl overflow-hidden shadow-2xl lg:mb-64 mb-10">
+            <div className="rounded-xl overflow-hidden shadow-2xl lg:mb-24 mb-6 hidden lg:block">
               <img
                 src={rightImage}
                 alt="NEET 2024 Toppers from Lucknow"

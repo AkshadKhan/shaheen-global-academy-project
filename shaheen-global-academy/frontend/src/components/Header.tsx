@@ -105,22 +105,32 @@ export function Header() {
         <div className="container mx-auto px-6 py-5">
           <div className="flex items-center justify-between gap-8">
             {/* Logo */}
-            <div
-              // onClick={() => location.pathname === "/" && window.scrollTo({top: 0, behavior: "smooth"})} //to go to top if already on home
-              className="flex items-center flex-shrink-0 cursor-pointer"
+            <Link
+              to="/"
+              onClick={() =>
+                location.pathname === "/" &&
+                window.scrollTo({ top: 0, behavior: "smooth" })
+              }
+              className="relative group flex-shrink-0"
             >
-              {" "}
-              {/* later need to make it to go to home component from anywhere using roupter*/}
-              <img
-                src={logo}
-                alt="Shaheen Global Academy"
-                className={`transition-all duration-100
+              <div
+                onClick={() =>
+                  location.pathname === "/" &&
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                } //to go to top if already on home
+                className="flex items-center flex-shrink-0 cursor-pointer"
+              >
+                <img
+                  src={logo}
+                  alt="Shaheen Global Academy"
+                  className={`transition-all duration-100
                   ${scrolled ? "h-8" : "h-12"}`}
-              />
-              <span
-                className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-              ></span>
-            </div>
+                />
+                <span
+                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                ></span>
+              </div>
+            </Link>
             {/* Navigation - Centered */}
             <nav className="hidden lg:flex items-center gap-10 flex-1 justify-end">
               <Link
@@ -131,7 +141,6 @@ export function Header() {
                 } //to go to top if already on home
                 className="flex items-center flex-shrink-0 cursor-pointer"
               >
-                {" "}
                 <span
                   className={`transition-all duration-300 relative group font-semibold ${
                     scrolled
@@ -139,8 +148,7 @@ export function Header() {
                       : "text-gray-900 hover:text-[#9AE600] text-xl"
                   }`}
                 >
-                  {" "}
-                  Home{" "}
+                  Home
                   <span
                     className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                   ></span>
@@ -218,7 +226,6 @@ export function Header() {
                   className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                 ></span>
               </Link>
-
             </nav>
             {/* Right Side Actions */}{" "}
             <div className="hidden lg:flex items-center gap-4 flex-shrink-0 relative">
@@ -392,13 +399,6 @@ export function Header() {
                     >
                       Enquiry
                     </a>
-                    <Link
-                      to="/about"
-                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                      onClick={handleMobileLinkClick}
-                    >
-                      About
-                    </Link>
                     <a
                       href="#infrastructure"
                       className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
@@ -408,6 +408,14 @@ export function Header() {
                     </a>
                   </>
                 )}
+
+                <Link
+                  to="/about"
+                  className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                  onClick={handleMobileLinkClick}
+                >
+                  About
+                </Link>
               </nav>
 
               {/* Mobile Menu Footer */}

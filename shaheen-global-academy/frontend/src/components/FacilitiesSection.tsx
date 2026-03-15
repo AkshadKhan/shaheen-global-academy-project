@@ -14,7 +14,11 @@ export function FacilitiesSection() {
     {
       icon: MonitorPlay,
       title: "Digital Classrooms",
-      description: "State-of-the-art smart classrooms equipped with interactive displays, high-speed internet, and multimedia learning tools for enhanced understanding."
+      description: (
+        <>
+          <span className="bg-red-200 px-1 rounded">State-of-the-art</span> smart classrooms equipped with interactive displays, high-speed internet, and multimedia learning tools for enhanced understanding.
+        </>
+      )
     },
     {
       icon: Smartphone,
