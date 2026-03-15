@@ -163,7 +163,7 @@ export function Header() {
               {isHomePage && (
                 <>
                   <a
-                    href="#enquiry"
+                    href="#admissions"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
                       ? "text-gray-700 hover:text-gray-900 text-base"
                       : "text-gray-900 hover:text-[#9AE600] text-xl"
@@ -187,8 +187,8 @@ export function Header() {
                     ></span>
                   </a>
 
-                  <a
-                    href="#about"
+                  <Link
+                    to="/about"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
                       ? "text-gray-700 hover:text-gray-900 text-base"
                       : "text-gray-900 hover:text-[#9AE600] text-xl"
@@ -198,7 +198,7 @@ export function Header() {
                     <span
                       className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                     ></span>
-                  </a>
+                  </Link>
                   <a
                     href="#infrastructure"
                     className={`transition-all duration-300 relative group font-semibold ${scrolled
@@ -216,7 +216,6 @@ export function Header() {
 
             </nav>
             {/* Right Side Actions */}{" "}
-            {/* somewhat made search working, maybe more work iff needed */}
             <div className="hidden lg:flex items-center gap-4 flex-shrink-0 relative">
               {/* Search Input - Expandable */}
               <div
@@ -306,6 +305,7 @@ export function Header() {
                 EN
               </button>
             </div>
+            
             {/* Mobile Menu Toggle Button */}
             <button
               className={`lg:hidden p-2.5 rounded-full transition-colors ${scrolled ? "hover:bg-gray-200" : "hover:bg-gray-200/50"
@@ -384,15 +384,15 @@ export function Header() {
                     >
                       Enquiry
                     </a>
-                    <a
-                      href="#about"
+                    <Link
+                      to="/about"
                       className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
                       onClick={handleMobileLinkClick}
                     >
                       About
-                    </a>
+                    </Link>
                     <a
-                      href="#"
+                      href="#infrastructure"
                       className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
                       onClick={handleMobileLinkClick}
                     >

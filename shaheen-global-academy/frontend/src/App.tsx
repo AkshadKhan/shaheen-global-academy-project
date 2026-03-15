@@ -4,6 +4,7 @@ import ScrollToTop from "./components/ScrollTotop";
 import { Header } from './components/Header';
 import HomePage from "./pages/HomePage";
 import AcademicsPage from "./pages/AcademicsPage";
+import AboutPage from "./pages/AboutPage";
 import { Footer } from "./components/Footer";
 // import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
@@ -18,6 +19,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/academics" element={<AcademicsPage />} />
+          <Route path="/about" element={<AboutPage />} />
           {/* <Route path="/login" element={<AdminLogin />} /> */}
           
         </Routes>
