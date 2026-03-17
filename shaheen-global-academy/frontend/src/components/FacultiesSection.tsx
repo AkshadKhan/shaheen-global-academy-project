@@ -1,24 +1,32 @@
-import { faculties } from '../data/faculties';
-import { GraduationCap, Award, BookOpen } from 'lucide-react';
-import { useState } from 'react';
+import { faculties } from "../data/faculties";
+import { GraduationCap, Award, BookOpen } from "lucide-react";
+import { useState } from "react";
 
 export function FacultiesSection() {
-  const [selectedDepartment, setSelectedDepartment] = useState('all');
+  const [selectedDepartment, setSelectedDepartment] = useState("all");
 
-  const images = import.meta.glob('../assets/faculties/*.{jpg,jpeg,png}', { eager: true }) as Record<string, { default: string }>;
+  const images = import.meta.glob("../assets/faculties/*.{jpg,jpeg,png}", {
+    eager: true,
+  }) as Record<string, { default: string }>;
 
   const departments = [
-    { id: 'all', label: 'All Departments' },
-    { id: 'mathematics', label: 'Mathematics' },
-    { id: 'physics', label: 'Physics' },
-    { id: 'biology', label: 'Biology' },
-    { id: 'chemistry', label: 'Chemistry' },
-    { id: 'management', label: 'Management' },
+    { id: "all", label: "All Departments" },
+    { id: "mathematics", label: "Mathematics" },
+    { id: "physics", label: "Physics" },
+    { id: "biology", label: "Biology" },
+    { id: "chemistry", label: "Chemistry" },
+    { id: "it", label: "IT" },
+    { id: "development", label: "Development" },
+    { id: "management", label: "Management" },
   ];
 
-  const filteredFaculties = selectedDepartment === 'all'
-    ? faculties
-    : faculties.filter(faculty => faculty.department === selectedDepartment);
+  const filteredFaculties =
+    selectedDepartment === "all"
+      ? faculties
+      : // : faculties.filter(faculty => faculty.department === selectedDepartment);
+        faculties.filter((faculty) =>
+          faculty.department.includes(selectedDepartment),
+        );
 
   return (
     <section className="bg-white py-20">
@@ -26,11 +34,11 @@ export function FacultiesSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <p className="text-[#9AE600] mb-2">Meet Our Educators</p>
-          <h2 className="text-gray-900 mb-4">
-            Our Faculties
-          </h2>
+          <h2 className="text-gray-900 mb-4">Our Faculties</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Learn from experienced educators who are passionate about shaping the future. Our faculty members bring expertise, dedication, and innovation to every classroom.
+            Learn from experienced educators who are passionate about shaping
+            the future. Our faculty members bring expertise, dedication, and
+            innovation to every classroom.
           </p>
         </div>
 
@@ -40,10 +48,11 @@ export function FacultiesSection() {
             <button
               key={dept.id}
               onClick={() => setSelectedDepartment(dept.id)}
-              className={`px-6 py-2.5 rounded-full transition-all duration-300 ${selectedDepartment === dept.id
-                ? 'bg-[#9AE600] text-gray-900 shadow-lg scale-105'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                }`}
+              className={`px-6 py-2.5 rounded-full transition-all duration-300 ${
+                selectedDepartment === dept.id
+                  ? "bg-[#9AE600] text-gray-900 shadow-lg scale-105"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
             >
               {dept.label}
             </button>
@@ -68,29 +77,24 @@ export function FacultiesSection() {
                 </div>
                 <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#9AE600] px-4 py-1 rounded-full shadow-md">
                   <p className="text-gray-900 text-sm whitespace-nowrap">
-                    {faculty.experience}<span>Years</span>
+                    {faculty.experience}
+                    <span>Years</span>
                   </p>
                 </div>
               </div>
 
               {/* Faculty Info */}
               <div className="text-center space-y-3">
-                <h3 className="text-gray-900">
-                  {faculty.name}
-                </h3>
+                <h3 className="text-gray-900">{faculty.name}</h3>
 
                 <div className="flex items-center justify-center gap-2 text-[#9AE600]">
                   <GraduationCap className="w-4 h-4" />
-                  <p className="text-sm">
-                    {faculty.qualification}
-                  </p>
+                  <p className="text-sm">{faculty.qualification}</p>
                 </div>
 
                 <div className="flex items-center justify-center gap-2 text-gray-600">
                   <BookOpen className="w-4 h-4" />
-                  <p className="text-sm">
-                    {faculty.specialization}
-                  </p>
+                  <p className="text-sm">{faculty.specialization}</p>
                 </div>
               </div>
 

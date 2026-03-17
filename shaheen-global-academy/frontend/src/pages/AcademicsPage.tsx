@@ -11,7 +11,7 @@ export default function Academics() {
     {
       title: "Prospectus",
       desc: "Comprehensive guide to our academic offerings, policies and campus life.",
-      link: "/documents/Prospectus-2025.pdf",
+      link: "/documents/shaheen-academy-prospectus.pdf",
       type: "pdf",
     },
     {

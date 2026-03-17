@@ -88,7 +88,7 @@ export function Hero() {
                 <h1
                   className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] leading-[1.1] tracking-tight"
                   style={{
-                    WebkitTextStroke: "1.5px rgba(193, 0, 0, 0.8)",
+                    WebkitTextStroke: "1.1px rgba(193, 0, 0, 0.5)",
                     textShadow: "0 6px 30px rgba(255,0,0,0.5)",
                   }}
                 >
