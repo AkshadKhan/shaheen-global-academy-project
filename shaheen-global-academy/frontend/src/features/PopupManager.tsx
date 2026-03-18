@@ -4,9 +4,7 @@ import { popupAnnouncements } from "../data/popupAnnouncements";
 
 export default function PopupManager() {
   const [open, setOpen] = useState(false);
-  const [announcement, setAnnouncement] = useState(
-    popupAnnouncements[0]
-  );
+  const [announcement] = useState(popupAnnouncements[0]);
 
   useEffect(() => {
     const shown = localStorage.getItem(announcement.id);
