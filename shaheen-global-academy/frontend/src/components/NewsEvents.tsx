@@ -128,6 +128,7 @@ export function NewsEvents() {
             <div className="rounded-xl overflow-hidden shadow-2xl lg:mb-24 mb-6 hidden lg:block">
               <img
                 src={rightImage}
+                loading="lazy"
                 alt="NEET 2024 Toppers from Lucknow"
                 className="w-full h-auto"
               />
@@ -135,6 +136,7 @@ export function NewsEvents() {
             <div className="rounded-xl overflow-hidden shadow-2xl">
               <img
                 src={toppersImage}
+                loading="lazy"
                 alt="NEET 2024 Toppers from Lucknow"
                 className="w-full h-auto"
               />
