@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import AcademicsPage from "./pages/AcademicsPage";
 import AboutPage from "./pages/AboutPage";
 import { Footer } from "./components/Footer";
+import QuickLinks from "./components/QuickLinks";
 // import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
 
@@ -27,6 +28,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <QuickLinks/>
     </div>
   );
 }

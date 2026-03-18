@@ -51,6 +51,7 @@ export function Hero() {
 
   return (
     <section
+      id="hero"
       className="relative overflow-hidden w-full"
       style={{ marginTop: "46px", minHeight: "calc(100vh - 84px)" }}
     >

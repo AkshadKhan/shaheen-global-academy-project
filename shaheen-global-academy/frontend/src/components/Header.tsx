@@ -172,7 +172,7 @@ export function Header() {
               {isHomePage && (
                 <>
                   <a
-                    href="#admissions"
+                    href="/academics"
                     className={`transition-all duration-300 relative group font-semibold ${
                       scrolled
                         ? "text-gray-700 hover:text-gray-900 text-base"
