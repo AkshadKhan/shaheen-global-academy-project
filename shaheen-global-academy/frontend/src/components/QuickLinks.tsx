@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { ArrowUpRight, Link2, MessageCircle, PhoneCall } from "lucide-react";
 
 const quickLinks = [
@@ -21,6 +22,7 @@ const quickLinks = [
 export default function QuickLinks() {
   const [open, setOpen] = useState(false);
   const [visible, setVisible] = useState(false);
+  const location = useLocation();
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Close menu when clicking outside
@@ -54,7 +56,12 @@ export default function QuickLinks() {
   useEffect(() => {
     const hero = document.getElementById("hero");
 
-    if (!hero) return;
+    if (!hero) {
+      setVisible(true);
+      return;
+    }
+
+    setVisible(false);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -65,7 +72,7 @@ export default function QuickLinks() {
 
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [location.pathname]);
 
   if (!visible) return null;
 
