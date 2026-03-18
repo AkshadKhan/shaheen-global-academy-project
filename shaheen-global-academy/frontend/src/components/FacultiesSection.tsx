@@ -16,6 +16,7 @@ export function FacultiesSection() {
     { id: "biology", label: "Biology" },
     { id: "chemistry", label: "Chemistry" },
     { id: "it", label: "IT" },
+    { id: "languages", label: "Languages" },
     { id: "development", label: "Development" },
     { id: "management", label: "Management" },
   ];

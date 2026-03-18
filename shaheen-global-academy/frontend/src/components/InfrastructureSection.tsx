@@ -27,6 +27,12 @@ const infrastructureItems = [
     title: 'Reception Lounge',
     description: 'Welcoming reception area with comfortable seating and modern design',
     image: images["../assets/infrastructure/reception-lounge.png"].default
+  },
+  {
+    id: 6,
+    title: 'Dining Hall',
+    description: 'Modern dining facilities offering nutritious meals and snacks for students and staff',
+    image: images["../assets/infrastructure/cafeteria.png"].default
   }
 ];
 

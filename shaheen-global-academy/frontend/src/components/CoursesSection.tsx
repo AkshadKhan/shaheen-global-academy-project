@@ -7,7 +7,7 @@ export function CoursesSection() {
       title: "Hifzul-Quran Plus Program",
       description: (
         <>
-          The Hifzul Quran Plus (or Hifz Plus) is a flagship program of the Shaheen Group of Institutions <span className="bg-green-200 px-1 rounded">designed to integrate students who have completed memorizing the Quran (Huffaz) into mainstream modern education.</span>
+          The Hifzul Quran Plus (or Hifz Plus) is a flagship program of the Shaheen Group of Institutions <span className="bg-[#FFD700]/50 px-1 rounded">designed to integrate students who have completed memorizing the Quran (Huffaz) into mainstream modern education.</span>
         </>
       )
     },
@@ -25,7 +25,7 @@ export function CoursesSection() {
       title: "Three Year NEET Integrated Program",
       description: (
         <>
-          A comprehensive three-year residential program that <span className='bg-yellow-200 px-1 rounded'>integrates NEET/JEE preparation with a strong foundation course,</span> designed for students starting after Class 9 or 10 to build concepts early and excel in medical entrance exams.
+          A comprehensive three-year residential program that <span className='bg-violet-300 px-1 rounded'>integrates NEET/JEE preparation with a strong foundation course,</span> designed for students starting after Class 9 or 10 to build concepts early and excel in medical entrance exams.
         </>
       )
     },
@@ -41,7 +41,11 @@ export function CoursesSection() {
     {
       icon: AlignHorizontalSpaceBetween,
       title: "NEET Repeater Program",
-      description: "A one-year intensive training program for students who have completed Class 12 and are dedicated to clearing the medical entrance exam."
+      description: (
+        <>
+          <span className="bg-green-200 px-1 rounded">A one-year intensive training program</span> for students who have completed Class 12 and are dedicated to clearing the medical entrance exam.
+        </>
+      )
     },
     {
       icon: BookOpenCheck,

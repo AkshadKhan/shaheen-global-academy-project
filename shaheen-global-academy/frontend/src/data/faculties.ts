@@ -2,7 +2,7 @@ export const faculties = [
   {
     name: "Syed Yousuf Al Hussaini",
     qualification: "",
-    specialization: "Head & Director of Shaheen Global Academy",
+    specialization: "Head & Chairman of Shaheen Global Academy",
     department: ["management"],
     experience: "30+",
     image: "yousuf-hussaini.jpg"
@@ -10,18 +10,42 @@ export const faculties = [
   {
     name: "Syed Yunus Al Hussaini",
     qualification: "",
-    specialization: "Director of Shaheen Global Academy",
+    specialization: "Managing Director of Shaheen Global Academy",
     department: ["management"],
     experience: "20+",
     image: "yunus-hussaini.jpg"
   },
   {
-    name: "Fakhrul Islam Falahi",
+    name: "Mr. Fakhrul Islam Falahi",
     qualification: "Masters in Languages",
     specialization: "Director of Academics & Management",
     department: ["management"],
     experience: "13+",
     image: "fakhrul-islam.jpg"
+  },
+  {
+    name: "Mr. Mohammad Aftab Alam",
+    qualification: "Masters in Chemistry & B.ed",
+    specialization: "Chemistry Faculty & Academic Head",
+    department: ["chemistry", "management"],
+    experience: "10+",
+    image: "aftab.jpg"
+  },
+  {
+    name: "Dr. Rehanuddin Faruqui",
+    qualification: "PhD in Botany",
+    specialization: "Botany",
+    department: ["biology"],
+    experience: "10+",
+    image: "rehan-faruqui.jpg"
+  },
+  {
+    name: "Dr. Mohammad Aslam Ansari",
+    qualification: "BUMS (Bachelor of Unani Medicine and Surgery)",
+    specialization: "Biology",
+    department: ["biology"],
+    experience: "5+",
+    image: "aslam-ansari.jpg"
   },
   {
     name: "Mr. Adeel Iqbal Khan",
@@ -32,25 +56,17 @@ export const faculties = [
     image: "testImage.png"
   },
   {
-    name: "Dr. Rehanuddin Siddiqui",
-    qualification: "PhD in Botany",
-    specialization: "Botany",
-    department: ["biology"],
-    experience: "10+",
-    image: "testImage.png"
-  },
-  {
-    name: "Dr. Usama",
-    qualification: "PhD in Chemistry",
+    name: "Mr. Mohammad Usman",
+    qualification: "Masters in Chemistry & B.ed",
     specialization: "Chemistry",
     department: ["chemistry"],
-    experience: "10+",
-    image: "testImage.png"
+    experience: "8+",
+    image: "usman.jpg"
   },
   {
     name: "Mr. Naseem Alam",
     qualification: "Masters & B.ed in Mathematics",
-    specialization: "Mathematics",
+    specialization: "Mathematics & Development",
     department: ["mathematics", "development"],
     experience: "5+",
     image: "naseem-alam.jpg"
@@ -72,11 +88,35 @@ export const faculties = [
     image: "shahroz-khan.jpg"
   },
   {
+    name: "Mr. Muhammad Aatir Ansari",
+    qualification: "Masters in Languages",
+    specialization: "English",
+    department: ["languages"],
+    experience: "3+",
+    image: "aatir-ansari.jpg"
+  },
+  {
+    name: "Mohammad Aqueel",
+    qualification: "Bachelor's in Mechanical Engineering",
+    specialization: "Mechanical Physics",
+    department: ["physics"],
+    experience: "4+",
+    image: "aqueel.jpg"
+  },
+  {
+    name: "Mr. Atif Saleem",
+    qualification: "MTech in Industrial & Production Engineering",
+    specialization: "Physics",
+    department: ["physics"],
+    experience: "4+",
+    image: "atif-saleem.jpg"
+  },
+  {
     name: "Mr. Muhammad Hashir",
     qualification: "Bachelor's in Computer Applications",
     specialization: "Information Technology",
     department: ["it"],
-    experience: "10+",
+    experience: "4+",
     image: "hashir.jpg"
   }
 ];
