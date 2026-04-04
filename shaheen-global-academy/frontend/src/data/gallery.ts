@@ -19,12 +19,6 @@ export const galleryData: GalleryItem[] = [
     title: "Cafeteria",
   },
   {
-    id: 3,
-    src: "/gallery/computer-lab.png",
-    category: "Campus",
-    title: "Computer Lab",
-  },
-  {
     id: 4,
     src: "/gallery/library-image.png",
     category: "Campus",
