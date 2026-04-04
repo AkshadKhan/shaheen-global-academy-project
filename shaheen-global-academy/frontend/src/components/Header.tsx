@@ -1,4 +1,4 @@
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -10,6 +10,7 @@ export function Header() {
   const [searchResults, setSearchResults] = useState<string[]>([]);
   const [showResults, setShowResults] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null); // for dropdown, not sure if needed, can be done with css only but this is more flexible and easier to manage in future if we want to add more features like click outside to close etc
   const location = useLocation(); //not sure if optimized, it is for going to top of home even if on home page
 
   //check if on homepage
@@ -93,6 +94,11 @@ export function Header() {
 
   const handleMobileLinkClick = () => {
     setMobileMenuOpen(false);
+    setActiveMenu(null); // reset all dropdowns
+  };
+
+  const toggleMenu = (menu: string) => {
+    setActiveMenu((prev) => (prev === menu ? null : menu));
   };
 
   return (
@@ -154,19 +160,63 @@ export function Header() {
                   ></span>
                 </span>
               </Link>
-              <Link
-                to="/academics"
-                className={`transition-all duration-300 relative group font-semibold ${
-                  scrolled
-                    ? "text-gray-700 hover:text-gray-900 text-base"
-                    : "text-gray-900 hover:text-[#9AE600] text-xl"
-                }`}
-              >
-                Academics
-                <span
-                  className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                ></span>
-              </Link>
+
+              <div className="relative group">
+                {/* Main Button */}
+                <Link
+                  to="/academics"
+                  className={`transition-all duration-300 relative group font-semibold ${
+                    scrolled
+                      ? "text-gray-700 hover:text-gray-900 text-base"
+                      : "text-gray-900 hover:text-[#9AE600] text-xl"
+                  }`}
+                >
+                  Academics
+                  <span
+                    className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                  ></span>
+                </Link>
+
+                {/* Dropdown */}
+                <div className="absolute top-full left-0 mt-3 w-52 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                  <div className="py-2">
+                    <Link
+                      to="/academics"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Overview
+                    </Link>
+
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Courses
+                    </Link>
+
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Curriculum
+                    </Link>
+
+                    <Link
+                      to="#faculties"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Faculties
+                    </Link>
+
+                    <Link
+                      to=""
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Testimonials
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
               {/* only show on homepage */}
               {isHomePage && (
@@ -374,13 +424,79 @@ export function Header() {
                 >
                   Home
                 </Link>
-                <Link
+
+                {/* <Link
                   to="/academics"
                   className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
                   onClick={handleMobileLinkClick}
                 >
                   Academics
-                </Link>
+                </Link> */}
+
+                <div className="flex flex-col">
+                  {/* Main Button */}
+                  <button
+                    onClick={() => toggleMenu("academics")}
+                    className="flex justify-between items-center px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                  >
+                    <span>Academics</span>
+
+                    <ChevronDown
+                      className={`w-4 h-4 transition-transform ${
+                        activeMenu === "academics" ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+
+                  {/* Dropdown */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      activeMenu === "academics" ? "max-h-96 mt-1" : "max-h-0"
+                    }`}
+                  >
+                    <div className="flex flex-col pl-4">
+                      <Link
+                        to="/academics"
+                        onClick={handleMobileLinkClick}
+                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Overview
+                      </Link>
+
+                      <Link
+                        to=""
+                        onClick={handleMobileLinkClick}
+                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Courses
+                      </Link>
+
+                      <Link
+                        to=""
+                        onClick={handleMobileLinkClick}
+                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Curriculum
+                      </Link>
+
+                      <Link
+                        to=""
+                        onClick={handleMobileLinkClick}
+                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Faculties
+                      </Link>
+
+                      <Link
+                        to=""
+                        onClick={handleMobileLinkClick}
+                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Testimonials
+                      </Link>
+                    </div>
+                  </div>
+                </div>
 
                 {/* only show on homepage */}
                 {isHomePage && (
