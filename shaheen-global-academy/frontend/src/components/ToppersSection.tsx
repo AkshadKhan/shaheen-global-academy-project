@@ -89,7 +89,6 @@ export function ToppersSection() {
                       <div className="relative h-80 overflow-hidden">
                         <img 
                           src={images[`../assets/toppers/${topper.image}`] as string}
-                          loading='lazy'
                           alt={topper.name}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />

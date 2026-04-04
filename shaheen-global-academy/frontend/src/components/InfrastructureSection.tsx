@@ -107,7 +107,6 @@ export function InfrastructureSection() {
           <div className="max-w-5xl w-full" onClick={(e) => e.stopPropagation()}>
             <img
               src={selectedImage.image}
-              loading='lazy'
               alt={selectedImage.title}
               className="w-full rounded-2xl shadow-2xl max-h-[80vh] object-contain"
               style={{ maxHeight: '80vh', objectFit: 'contain' }}
