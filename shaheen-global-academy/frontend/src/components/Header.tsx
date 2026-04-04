@@ -2,6 +2,7 @@ import { Search, Menu, X, ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useScrollToSection } from "../hooks/useScrollToSection";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -15,6 +16,9 @@ export function Header() {
 
   //check if on homepage
   const isHomePage = location.pathname === "/";
+
+  //custom hooks
+  const scrollToSection = useScrollToSection();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -194,18 +198,18 @@ export function Header() {
                       Courses
                     </Link>
 
-                    <Link
-                      to=""
-                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
-                    >
-                      Curriculum
-                    </Link>
-
-                    <Link
-                      to="#faculties"
+                    <button
+                      onClick={() => scrollToSection("faculties")}
                       className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
                     >
                       Faculties
+                    </button>
+
+                    <Link
+                      to="/gallery"
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Gallery
                     </Link>
 
                     <Link
@@ -471,20 +475,22 @@ export function Header() {
                         Courses
                       </Link>
 
-                      <Link
-                        to=""
-                        onClick={handleMobileLinkClick}
-                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
-                      >
-                        Curriculum
-                      </Link>
-
-                      <Link
-                        to=""
-                        onClick={handleMobileLinkClick}
-                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      <button
+                        onClick={() => {
+                          scrollToSection("faculties");
+                          handleMobileLinkClick();
+                        }}
+                        className="block w-full text-left px-4 py-2 text-gray-700 hover:text-[#9AE600]"
                       >
                         Faculties
+                      </button>
+
+                      <Link
+                        to="/gallery"
+                        onClick={handleMobileLinkClick}
+                        className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Gallery
                       </Link>
 
                       <Link

@@ -30,7 +30,7 @@ export function FacultiesSection() {
         );
 
   return (
-    <section className="bg-white py-20">
+    <section id="faculties" className="bg-white py-20">
       <div className="container mx-auto px-6 ">
         {/* Header */}
         <div className="text-center mb-12">
