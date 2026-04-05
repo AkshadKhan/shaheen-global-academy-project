@@ -253,6 +253,25 @@ export default function ContactUsPage() {
             </div>
           </div>
         </div>
+
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-white text-center mb-6">
+            Find Us on Map
+          </h2>
+
+          <div className="w-full h-[400px] rounded-2xl overflow-hidden border border-white/10">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3556.6908016376474!2d80.66435197541017!3d26.94501505870173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399ea989def16147%3A0x17b1fc91ab6e6b29!2sSHAHEEN%20GLOBAL%20ACADEMY%20(NEET%20%2F%20IIT-JEE)!5e0!3m2!1sen!2sin!4v1775408000654!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+        
       </div>
     </div>
   );
