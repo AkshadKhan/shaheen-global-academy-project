@@ -5,7 +5,6 @@ import {
   Instagram,
   Twitter,
   Phone,
-  MessageCircle,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
