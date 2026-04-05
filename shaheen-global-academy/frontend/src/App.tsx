@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage";
 import { Footer } from "./components/Footer";
 import QuickLinks from "./components/QuickLinks";
 import Gallery from "./pages/Gallery";
+import ContactUsPage from "./pages/ContactUsPage";
 // import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/academics" element={<AcademicsPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/contact" element={<ContactUsPage />} />
           {/* <Route path="/login" element={<AdminLogin />} /> */}
           
         </Routes>
