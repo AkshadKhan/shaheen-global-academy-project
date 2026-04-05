@@ -212,6 +212,13 @@ export function Header() {
                       Gallery
                     </Link>
 
+                    <button
+                      onClick={() => scrollToSection("infrastructure")}
+                      className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
+                    >
+                      Infrastructure
+                    </button>
+
                     <Link
                       to=""
                       className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
@@ -234,32 +241,6 @@ export function Header() {
                     }`}
                   >
                     Admissions {/* admision through fdorms */}
-                    <span
-                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                    ></span>
-                  </a>
-                  <a
-                    href="#enquiry"
-                    className={`transition-all duration-300 relative group font-semibold ${
-                      scrolled
-                        ? "text-gray-700 hover:text-gray-900 text-base"
-                        : "text-gray-900 hover:text-[#9AE600] text-xl"
-                    }`}
-                  >
-                    Enquiry
-                    <span
-                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
-                    ></span>
-                  </a>
-                  <a
-                    href="#infrastructure"
-                    className={`transition-all duration-300 relative group font-semibold ${
-                      scrolled
-                        ? "text-gray-700 hover:text-gray-900 text-base"
-                        : "text-gray-900 hover:text-[#9AE600] text-xl"
-                    }`}
-                  >
-                    Infrastructure
                     <span
                       className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                     ></span>
@@ -508,6 +489,16 @@ export function Header() {
                         Gallery
                       </Link>
 
+                      <button
+                        onClick={() => {
+                          scrollToSection("infrastructure");
+                          handleMobileLinkClick();
+                        }}
+                        className="block w-full text-left px-4 py-2 text-gray-700 hover:text-[#9AE600]"
+                      >
+                        Infrastructure
+                      </button>
+
                       <Link
                         to=""
                         onClick={handleMobileLinkClick}
@@ -528,20 +519,6 @@ export function Header() {
                       onClick={handleMobileLinkClick}
                     >
                       Admissions
-                    </a>
-                    <a
-                      href="#enquiry"
-                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                      onClick={handleMobileLinkClick}
-                    >
-                      Enquiry
-                    </a>
-                    <a
-                      href="#infrastructure"
-                      className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
-                      onClick={handleMobileLinkClick}
-                    >
-                      Infrastructure
                     </a>
                   </>
                 )}

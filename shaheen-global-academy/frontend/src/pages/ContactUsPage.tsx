@@ -186,7 +186,7 @@ export default function ContactUsPage() {
             <div className="p-8 sm:p-12 flex flex-col justify-center">
               <div className="text-center mb-10">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white">
-                  Send a Message
+                  WhatsApp Us
                 </h3>
                 <p className="text-gray-400 mt-2">
                   We will get back to you soon
@@ -254,29 +254,6 @@ export default function ContactUsPage() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* FLOATING WHATSAPP BUTTON */}
-      <div className="fixed bottom-20 right-6 z-[51] group">
-        {/* Tooltip (ONLY DESKTOP) */}
-        <div
-          className="hidden md:block absolute right-14 top-1/2 -translate-y-1/2 
-          bg-green-700 text-white text-xs px-3 py-1 rounded-md 
-          opacity-0 group-hover:opacity-100 group-hover:delay-300 transition whitespace-nowrap pointer-events-none"
-        >
-          Send WhatsApp Message
-        </div>
-
-        {/* Button */}
-        <a
-          href={`https://wa.me/${whatsappNumber}?text=Hi I want to know about Shaheen Global Academy`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg hover:scale-110 transition">
-            <MessageCircle className="w-4 h-4" />
-          </div>
-        </a>
       </div>
     </div>
   );
