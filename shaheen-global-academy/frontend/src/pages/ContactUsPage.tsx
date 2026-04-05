@@ -51,10 +51,6 @@ export default function ContactUsPage() {
       leads = [];
     }
 
-    // DEBUG (optional)
-    console.log("Submissions:", submissions);
-    console.log("Leads:", leads);
-
     // Filter last 1 hour
     const oneHourAgo = now - 60 * 60 * 1000;
     const recent = submissions.filter((t) => t > oneHourAgo);
@@ -111,13 +107,6 @@ export default function ContactUsPage() {
 
   const handleCall = () => {
     window.location.href = `tel:${phoneNumber}`;
-  };
-
-  const handleWhatsApp = () => {
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=Hi, I want to know about Shaheen Global Academy`,
-      "_blank",
-    );
   };
 
   const handleEmail = () => {
