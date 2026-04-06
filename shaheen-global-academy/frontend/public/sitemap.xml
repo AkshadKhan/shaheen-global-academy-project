@@ -2,28 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>https://www.shaheenglobalacademy.com/</loc>
+<loc>https://shaheenglobalacademy.com/</loc>
 <priority>1.0</priority>
 </url>
 
 <url>
-<loc>https://www.shaheenglobalacademy.com/academics</loc>
+<loc>https://shaheenglobalacademy.com/academics</loc>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.shaheenglobalacademy.com/#enquiry</loc>
+<loc>https://shaheenglobalacademy.com/gallery</loc>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.shaheenglobalacademy.com/#infrastructure</loc>
-<priority>0.7</priority>
+<loc>https://shaheenglobalacademy.com/contact</loc>
+<priority>0.8</priority>
 </url>
 
 <url>
-<loc>https://www.shaheenglobalacademy.com/#about</loc>
-<priority>0.7</priority>
+<loc>https://shaheenglobalacademy.com/about</loc>
+<priority>0.8</priority>
 </url>
 
 </urlset>

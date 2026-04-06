@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.shaheenglobalacademy.com/sitemap.xml
+Sitemap: https://shaheenglobalacademy.com/sitemap.xml
