@@ -85,18 +85,18 @@ export function Footer() {
             <div>
               <h4 className="text-white mb-4">Social</h4>
               <ul className="space-y-2">
-                <li><a href="https://www.facebook.com/shaheenlucknow/" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Facebook</a></li>
-                <li><a href="https://www.instagram.com/shaheenglobalacademy" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/in/fakhrul-islam-34748a138/" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">LinkedIn</a></li>
-                <li><a href="https://twitter.com/Shaheengrouporg" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Twitter</a></li>
-                <li><a href="https://www.youtube.com/@shaheengroupofinstitutions" target='blank' className="text-gray-400 hover:text-lime-400 transition-colors">Youtube</a></li>
+                <li><a href="https://www.facebook.com/shaheenlucknow/" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Facebook</a></li>
+                <li><a href="https://www.instagram.com/shaheenglobalacademy" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/fakhrul-islam-34748a138/" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">LinkedIn</a></li>
+                <li><a href="https://twitter.com/Shaheengrouporg" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Twitter</a></li>
+                <li><a href="https://www.youtube.com/@shaheengroupofinstitutions" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Youtube</a></li>
               </ul>
             </div>
 
             {/* Legal */}
             <div>
               <h4 className="text-white mb-4">Legal</h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 cursor-default">
                 <li><a onClick={() => setOpenModal("terms")} className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
                 <li><a onClick={() => setOpenModal("privacy")} className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
                 <li><a onClick={() => setShowModal(true)} className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
@@ -107,7 +107,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-500">
-              &copy; {new Date().getFullYear()} Shaheen Education Foundation. All rights reserved.
+              &copy; {new Date().getFullYear()} Shaheen Global Academy. All rights reserved.
             </p>
           </div>
         </div>

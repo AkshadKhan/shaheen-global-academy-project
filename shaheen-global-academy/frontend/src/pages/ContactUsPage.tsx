@@ -5,17 +5,66 @@ import {
   Instagram,
   Twitter,
   Phone,
+  Facebook,
+  Youtube,
 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function ContactUsPage() {
   useEffect(() => {
     document.title = "Contact | Shaheen Global Academy";
   }, []);
 
-  const phoneNumber = "+919044442494";
+  const contacts = [
+    {
+      label: "Call Us",
+      number: "+91 90444 42494",
+    },
+    {
+      label: "Admission Enquiries",
+      number: "+91 95192 11112",
+    },
+    {
+      label: "Support Desk",
+      number: "+91 90444 42493",
+    },
+    {
+      label: "Enquiries",
+      number: "+91 90444 42495",
+    },
+  ];
+
+  const socialLinks = {
+    twitter: "https://twitter.com/Shaheengrouporg",
+    instagram: "https://www.instagram.com/shaheenglobalacademy",
+    linkedin: "https://www.linkedin.com/in/fakhrul-islam-34748a138/",
+    facebook: "https://www.facebook.com/shaheenlucknow/",
+    youtube: "https://www.youtube.com/@shaheengroupofinstitutions",
+  };
+
   const whatsappNumber = "919044442494";
   const emailAddress = "shaheenglobalacademy@gmail.com";
+
+  const [openContacts, setOpenContacts] = useState(false);
+
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpenContacts(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   // FORM STATE
   const [form, setForm] = useState({
@@ -105,7 +154,7 @@ export default function ContactUsPage() {
   };
 
   const handleCall = () => {
-    window.location.href = `tel:${phoneNumber}`;
+    window.location.href = `tel:${contacts[0].number}`;
   };
 
   const handleEmail = () => {
@@ -136,19 +185,62 @@ export default function ContactUsPage() {
         <div className="rounded-3xl bg-white/10 backdrop-blur-xl border border-[#9AE600]/20 overflow-hidden shadow-xl">
           <div className="grid md:grid-cols-2">
             {/* LEFT SIDE */}
-            <div className="p-8 sm:p-12 bg-[#9AE600]/5 relative">
+            <div className="p-8 sm:p-12 bg-[#9AE600]/5 relative md:flex md:flex-col">
               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
                 Shaheen Global Academy
               </h2>
               <p className="text-[#9AE600] mb-8">Excellence in Education</p>
 
               <div className="space-y-8">
-                <div className="flex gap-4">
-                  <Phone className="text-[#9AE600]" />
-                  <div>
-                    <p className="text-gray-400 text-sm">Call Us</p>
-                    <p className="text-white font-semibold">{phoneNumber}</p>
+                <div className="relative" ref={dropdownRef}>
+                  <div
+                    onClick={() => setOpenContacts(!openContacts)}
+                    className="flex gap-4 items-center cursor-pointer"
+                  >
+                    <Phone className="text-[#9AE600]" />
+
+                    <div>
+                      <p className="text-gray-400 text-sm">Call Us</p>
+                      <p className="text-white font-semibold flex items-center gap-2">
+                        {contacts[0].number}
+                        <span
+                          className={`text-gray-400 text-xs transition-transform duration-300 ${
+                            openContacts ? "rotate-180" : ""
+                          }`}
+                        >
+                          ▼
+                        </span>
+                      </p>
+                    </div>
                   </div>
+
+                  {/* Animated Dropdown */}
+                  <AnimatePresence>
+                    {openContacts && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute mt-3 w-60 bg-[#2f393a] border hover:bg-[#29303d] border-gray-800 rounded-xl shadow-xl z-50 overflow-hidden"
+                      >
+                        {contacts.map((contact, index) => (
+                          <a
+                            key={index}
+                            href={`tel:${contact.number}`}
+                            className="block px-4 py-3 hover:bg-[#2f393a] transition-all duration-200 hover:pl-6"
+                          >
+                            <p className="text-md text-blue-600 font-medium">
+                              {contact.label}
+                            </p>
+                            <p className="text-white text-sm hover:text-white font-medium">
+                              {contact.number}
+                            </p>
+                          </a>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
 
                 <div className="flex gap-4">
@@ -171,10 +263,57 @@ export default function ContactUsPage() {
               </div>
 
               {/* Socials */}
-              <div className="flex gap-4 mt-10">
-                <Twitter className="text-blue-400 hover:scale-110 cursor-pointer" />
-                <Instagram className="text-pink-500 hover:scale-110 cursor-pointer" />
-                <Linkedin className="text-blue-500 hover:scale-110 cursor-pointer" />
+              <div className="flex flex-wrap gap-4 justify-center mt-10 md:mt-auto md:justify-start">
+                {/* Twitter */}
+                <a
+                  href="https://twitter.com/Shaheengrouporg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Twitter className="text-blue-400 hover:scale-110 transition group-hover:drop-shadow-lg" />
+                </a>
+
+                {/* Instagram */}
+                <a
+                  href="https://www.instagram.com/shaheenglobalacademy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Instagram className="text-pink-500 hover:scale-110 transition group-hover:drop-shadow-lg" />
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/fakhrul-islam-34748a138/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Linkedin className="text-blue-500 hover:scale-110 transition group-hover:drop-shadow-lg" />
+                </a>
+
+                {/* Facebook */}
+                <a
+                  href="https://www.facebook.com/shaheenlucknow/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Facebook className="text-blue-600 hover:scale-110 transition group-hover:drop-shadow-lg" />
+                </a>
+
+                  {/* Youtube */}
+                <a
+                  href="https://www.youtube.com/@shaheengroupofinstitutions"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                >
+                  <Youtube className="text-red-600 hover:scale-110 transition group-hover:drop-shadow-lg" />
+                </a>
+
               </div>
 
               {/* Decorative */}
@@ -271,7 +410,6 @@ export default function ContactUsPage() {
             ></iframe>
           </div>
         </div>
-        
       </div>
     </div>
   );
