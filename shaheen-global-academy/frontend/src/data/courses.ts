@@ -39,7 +39,6 @@ export const COURSES: Course[] = [
     tag: "High School/Intermediate with NEET/JEE",
     subjects: ["High School/Intermediate", "NEET/JEE Preparation"],
     duration: "3 Years",
-    highlight: true,
   },
   {
     id: 4,

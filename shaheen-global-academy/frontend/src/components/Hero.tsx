@@ -55,7 +55,7 @@ export function Hero() {
     <section
       id="hero"
       className="relative overflow-hidden w-full"
-      style={{ marginTop: "46px", minHeight: "calc(100vh - 84px)" }}
+      style={{ marginTop: "30px", minHeight: "calc(100vh - 84px)" }}
     >
       {/* <div className="absolute inset-0">
         <img src={heroImage1} alt="" className="w-full h-full object-cover object-center blur-[1.5px]" />

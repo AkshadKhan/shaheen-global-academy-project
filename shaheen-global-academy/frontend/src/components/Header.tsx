@@ -1,6 +1,6 @@
 import { Search, Menu, X, ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ScrollToSection } from "../hooks/ScrollToSection";
 
@@ -17,6 +17,8 @@ export function Header() {
   //check if on homepage
   const isHomePage = location.pathname === "/";
 
+  const searchRef = useRef<HTMLInputElement>(null);
+
   //custom hooks
   const scrollToSection = ScrollToSection();
 
@@ -28,6 +30,21 @@ export function Header() {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
+        setSearchOpen(false);
+        setShowResults(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Search content database, good like this as per now bcz few contents only to search
@@ -112,7 +129,7 @@ export function Header() {
           scrolled ? "bg-white shadow-md py-2" : "bg-white py-4"
         }`}
       >
-        <div className="container mx-auto px-6 py-5">
+        <div className="container mx-auto px-6 py-0">
           <div className="flex items-center justify-between gap-8">
             {/* Logo */}
             <Link
@@ -123,18 +140,12 @@ export function Header() {
               }
               className="relative group flex-shrink-0"
             >
-              <div
-                onClick={() =>
-                  location.pathname === "/" &&
-                  window.scrollTo({ top: 0, behavior: "smooth" })
-                } //to go to top if already on home
-                className="flex items-center flex-shrink-0 cursor-pointer"
-              >
+              <div className="flex items-center flex-shrink-0 cursor-pointer">
                 <img
                   src={logo}
                   alt="Shaheen Global Academy"
                   className={`transition-all duration-100
-                  ${scrolled ? "h-8" : "h-12"}`}
+                  ${scrolled ? "h-12" : "h-20"}`}
                 />
                 <span
                   className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
@@ -275,10 +286,13 @@ export function Header() {
                   className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                 ></span>
               </Link>
-
             </nav>
+            
             {/* Right Side Actions */}{" "}
-            <div className="hidden lg:flex items-center gap-4 flex-shrink-0 relative">
+            <div
+              ref={searchRef}
+              className="hidden lg:flex items-center gap-4 flex-shrink-0 relative"
+            >
               {/* Search Input - Expandable */}
               <div
                 className={`overflow-hidden transition-all duration-300 ${
@@ -296,13 +310,19 @@ export function Header() {
                   autoFocus={searchOpen}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  onKeyPress={handleKeyPress}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") handleKeyPress(e);
+                    if (e.key === "Escape") {
+                      setSearchOpen(false);
+                      setShowResults(false);
+                    }
+                  }}
                 />
 
                 {/* Search Results Dropdown */}
                 {showResults && searchOpen && (
                   <div
-                    className={`absolute top-full mt-2 w-64 rounded-lg shadow-lg border overflow-hidden ${
+                    className={`absolute right-0 top-full mt-2 w-64 rounded-lg shadow-lg border overflow-hidden ${
                       scrolled
                         ? "bg-white border-gray-200"
                         : "bg-white/95 backdrop-blur-md border-gray-300"
@@ -329,6 +349,7 @@ export function Header() {
                                 });
                               }
                               setShowResults(false);
+                              setSearchOpen(false);
                             }}
                           >
                             {result}
@@ -342,7 +363,10 @@ export function Header() {
                     )}
                     <button
                       className="w-full px-4 py-2 text-xs text-[#9AE600] hover:bg-gray-50 border-t border-gray-200 transition-colors"
-                      onClick={() => setShowResults(false)}
+                      onClick={() => {
+                        setShowResults(false);
+                        setSearchOpen(false);
+                      }}
                     >
                       Close
                     </button>
@@ -350,12 +374,13 @@ export function Header() {
                 )}
               </div>
 
+              {/* Search Button */}
               <button
                 className={`p-2.5 rounded-full transition-colors ${
                   scrolled ? "hover:bg-gray-200" : "hover:bg-gray-200/50"
                 }`}
                 aria-label="Search"
-                onClick={() => setSearchOpen(!searchOpen)}
+                onClick={() => setSearchOpen((prev) => !prev)}
               >
                 <Search
                   className={`w-5 h-5 ${
@@ -363,6 +388,8 @@ export function Header() {
                   }`}
                 />
               </button>
+
+              {/* Language Selector */}
               <button
                 className={`px-4 py-2 rounded transition-colors text-sm ${
                   scrolled

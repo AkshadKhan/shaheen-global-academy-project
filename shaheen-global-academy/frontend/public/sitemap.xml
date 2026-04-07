@@ -12,8 +12,13 @@
 </url>
 
 <url>
-<loc>https://shaheenglobalacademy.com/gallery</loc>
+<loc>https://shaheenglobalacademy.com/courses</loc>
 <priority>0.8</priority>
+</url>
+
+<url>
+<loc>https://shaheenglobalacademy.com/gallery</loc>
+<priority>0.7</priority>
 </url>
 
 <url>
