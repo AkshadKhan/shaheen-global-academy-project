@@ -2,7 +2,7 @@ import { Search, Menu, X, ChevronDown } from "lucide-react";
 import logo from "../assets/logo.png";
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useScrollToSection } from "../hooks/useScrollToSection";
+import { ScrollToSection } from "../hooks/ScrollToSection";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,7 +18,7 @@ export function Header() {
   const isHomePage = location.pathname === "/";
 
   //custom hooks
-  const scrollToSection = useScrollToSection();
+  const scrollToSection = ScrollToSection();
 
   useEffect(() => {
     const handleScroll = () => {

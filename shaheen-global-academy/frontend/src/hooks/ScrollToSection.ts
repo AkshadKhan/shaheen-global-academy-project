@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export function useScrollToSection() {
+export function ScrollToSection() {
   const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
