@@ -66,13 +66,12 @@ export function Hero() {
             src={isMobile ? img.mobile : img.desktop}
             alt=""
             className="absolute inset-0 w-full h-full object-cover object-center blur-[1.5px]"
-            initial={false}
+            initial={{ opacity: index === 0 ? 1 : 0, scale: 1.05 }} // Start with the first image visible and slightly zoomed in
             animate={{
               opacity: currentHeroImage === index ? 1 : 0,
               scale: currentHeroImage === index ? 1 : 1.05,
             }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
-            style={{ opacity: index === 0 ? 1 : 0 }} // Ensure the first image is visible on initial load
           />
         ))}
       </div>
