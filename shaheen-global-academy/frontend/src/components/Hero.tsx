@@ -6,6 +6,8 @@ import heroMobile1 from "../assets/bgm.png";
 import heroMobile2 from "../assets/bgm2.png";
 import heroMobile3 from "../assets/bgm3.png";
 
+import logo from "../assets/logo.png";
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -85,11 +87,12 @@ export function Hero() {
           <div className="flex-1 text-white max-w-3xl">
             <div className="space-y-6 mb-12">
               <div className="space-y-3">
+                <img src={logo} alt="Shaheen Global Academy Logo" className="h-16 w-auto mb-[-10px] drop-shadow-lg" />
                 <h1
-                  className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] leading-[1.1] tracking-tight"
+                  className="text-white font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[72px] leading-[1.1] tracking-wide"
                   style={{
-                    WebkitTextStroke: "1.1px rgba(193, 0, 0, 0.5)",
-                    textShadow: "0 6px 30px rgba(255,0,0,0.5)",
+                    WebkitTextStroke: "1.1px rgba(254, 250, 255, 0.3)",
+                    textShadow: "0 6px 30px rgba(255,0,0,0.3)",
                   }}
                 >
                   Shaheen Global Academy
