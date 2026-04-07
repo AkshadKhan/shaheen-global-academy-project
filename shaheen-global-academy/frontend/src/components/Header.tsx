@@ -192,7 +192,7 @@ export function Header() {
                     </Link>
 
                     <Link
-                      to=""
+                      to="/courses"
                       className="block px-4 py-2 text-gray-700 hover:bg-[#9AE600]/10 hover:text-[#9AE600]"
                     >
                       Courses

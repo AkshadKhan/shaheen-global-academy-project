@@ -10,6 +10,8 @@ import { Footer } from "./components/Footer";
 import QuickLinks from "./components/QuickLinks";
 import Gallery from "./pages/Gallery";
 import ContactUsPage from "./pages/ContactUsPage";
+import CoursesPage from "./pages/CoursesPage";
+
 // import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
 
@@ -24,6 +26,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/academics" element={<AcademicsPage />} />
+          <Route path="/courses" element={<CoursesPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactUsPage />} />

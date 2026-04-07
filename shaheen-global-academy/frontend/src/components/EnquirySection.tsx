@@ -1,6 +1,11 @@
 import { Phone, Mail, Clock, MessageCircleDashed, MapPin } from 'lucide-react';
 
-export function EnquirySection() {
+type Props = {
+  className?: string;
+};
+
+export function EnquirySection({ className }: Props) {
+
   const phoneNumber = "+91-090444 42494";
   const whatsappNumber = "+918050020345";
   const email = "shaheenglobalacademy@gmail.com";
@@ -19,7 +24,7 @@ export function EnquirySection() {
   };
 
   return (
-    <section className="bg-gradient-to-br from-gray-900 via-[#101828] to-gray-900 py-6 relative overflow-hidden">
+    <section id="enquiry" className={`bg-gradient-to-br from-gray-900 via-[#101828] to-gray-900 py-6 relative overflow-hidden ${className}`}>
       {/* Background Accents */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-64 h-64 bg-[#9AE600] rounded-full blur-3xl"></div>
