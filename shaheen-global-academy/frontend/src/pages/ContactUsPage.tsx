@@ -266,7 +266,7 @@ export default function ContactUsPage() {
               <div className="flex flex-wrap gap-4 justify-center mt-10 md:mt-auto md:justify-start">
                 {/* Twitter */}
                 <a
-                  href="https://twitter.com/Shaheengrouporg"
+                  href={socialLinks.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -276,7 +276,7 @@ export default function ContactUsPage() {
 
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/shaheenglobalacademy"
+                  href={socialLinks.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -286,7 +286,7 @@ export default function ContactUsPage() {
 
                 {/* LinkedIn */}
                 <a
-                  href="https://www.linkedin.com/in/fakhrul-islam-34748a138/"
+                  href={socialLinks.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -296,7 +296,7 @@ export default function ContactUsPage() {
 
                 {/* Facebook */}
                 <a
-                  href="https://www.facebook.com/shaheenlucknow/"
+                  href={socialLinks.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -306,7 +306,7 @@ export default function ContactUsPage() {
 
                   {/* Youtube */}
                 <a
-                  href="https://www.youtube.com/@shaheengroupofinstitutions"
+                  href={socialLinks.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
