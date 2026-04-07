@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { ProgramHighlights } from "../data/programHighlights";
 
 export function CoursesSection() {
   return (
-    <section id='courses' className="bg-gray-200 py-20">
+    <section id="courses" className="bg-gray-200 py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-12">
           <p className="text-blue-600 mb-2 font-semibold text-2xl">Courses</p>
@@ -10,7 +11,9 @@ export function CoursesSection() {
             Offered by Shaheen Global Academy
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Discover a learning experience designed to help you achieve your goals. We combines cutting-edge technology with proven teaching methods. {' '}
+            Discover a learning experience designed to help you achieve your
+            goals. We combines cutting-edge technology with proven teaching
+            methods.
             <a
               href="/academics#prospectus"
               className="text-blue-700 hover:text-blue-900 font-medium ml-1"
@@ -24,23 +27,26 @@ export function CoursesSection() {
           {ProgramHighlights.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div 
+              <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow"
               >
                 <div className="w-12 h-12 bg-lime-400 rounded-full flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-gray-800" />
                 </div>
-                <h3 className="text-gray-800 mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600">
-                  {feature.description}
-                </p>
+                <h3 className="text-gray-800 mb-3">{feature.title}</h3>
+                <p className="text-gray-600">{feature.description}</p>
               </div>
             );
           })}
         </div>
+
+        <Link
+          to="/courses"
+          className="block text-center text-blue-700 hover:text-blue-900 font-medium mt-8"
+        >
+          View All Courses
+        </Link>
       </div>
     </section>
   );

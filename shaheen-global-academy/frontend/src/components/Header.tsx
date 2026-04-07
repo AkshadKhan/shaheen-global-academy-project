@@ -388,18 +388,8 @@ export function Header() {
                   }`}
                 />
               </button>
-
-              {/* Language Selector */}
-              <button
-                className={`px-4 py-2 rounded transition-colors text-sm ${
-                  scrolled
-                    ? "bg-gray-100 text-gray-700 hover:bg-gray-200"
-                    : "bg-white/20 text-gray-900 hover:bg-white/30 border border-gray-300"
-                }`}
-              >
-                EN
-              </button>
             </div>
+            
             {/* Mobile Menu Toggle Button */}
             <button
               className={`lg:hidden p-2.5 rounded-full transition-colors ${

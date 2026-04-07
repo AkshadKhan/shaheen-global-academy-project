@@ -190,6 +190,14 @@ html {
   font-size: var(--font-size);
 }
 
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* Very thin custom scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
