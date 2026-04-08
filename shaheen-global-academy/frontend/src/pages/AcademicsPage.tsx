@@ -1,6 +1,7 @@
 import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import ComingSoonModal from "../components/ComingSoonModal";
+import { Link } from "react-router-dom";
 
 export default function Academics() {
   const [showModal, setShowModal] = useState(false);
@@ -23,7 +24,7 @@ export default function Academics() {
     {
       title: "Academic Calendar",
       desc: "View schedules, examination timelines and important academic dates.",
-      link: "/documents/academic-calendar-test.pdf"
+      link: "/documents/academic-calendar-test.pdf",
     },
     {
       title: "Scholarships",
@@ -46,8 +47,8 @@ export default function Academics() {
     {
       title: "Programs Offered",
       desc: "Explore the diverse academic programs we offer.",
-      link: "/academics/programs",
-      comingSoon: true,
+      link: "/courses",
+      type: "internal",
     },
   ];
 
@@ -78,20 +79,57 @@ export default function Academics() {
 
       {/* Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mt-16 mb-16">
-        {sections.map((sec, i) => (
-          <a
-            key={i}
-            onClick={() => handleSectionClick(sec)}
-            className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300"
-          >
-            <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
-              {sec.title}
-            </h3>
-            <p className="text-gray-600 text-sm">{sec.desc}</p>
+        {sections.map((sec, i) => {
+          const isInternal = sec.type === "internal";
 
-            <div className="mt-4 h-[3px] w-0 group-hover:w-20 bg-[#9AE600] transition-all duration-300"></div>
-          </a>
-        ))}
+          if (sec.comingSoon) {
+            return (
+              <div
+                key={i}
+                onClick={() => handleSectionClick(sec)}
+                className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300 cursor-pointer"
+              >
+                <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
+                  {sec.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{sec.desc}</p>
+                <div className="mt-4 h-[3px] w-0 group-hover:w-20 bg-[#9AE600] transition-all duration-300"></div>
+              </div>
+            );
+          }
+
+          if (isInternal) {
+            return (
+              <Link
+                key={i}
+                to={sec.link}
+                className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300"
+              >
+                <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
+                  {sec.title}
+                </h3>
+                <p className="text-gray-600 text-sm">{sec.desc}</p>
+                <div className="mt-4 h-[3px] w-0 group-hover:w-20 bg-[#9AE600] transition-all duration-300"></div>
+              </Link>
+            );
+          }
+
+          return (
+            <a
+              key={i}
+              href={sec.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300"
+            >
+              <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
+                {sec.title}
+              </h3>
+              <p className="text-gray-600 text-sm">{sec.desc}</p>
+              <div className="mt-4 h-[3px] w-0 group-hover:w-20 bg-[#9AE600] transition-all duration-300"></div>
+            </a>
+          );
+        })}
       </div>
 
       {/* comming soon modal */}
