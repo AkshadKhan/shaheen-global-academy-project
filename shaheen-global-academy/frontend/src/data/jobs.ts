@@ -7,7 +7,6 @@ export const JOBS: Job[] = [
     description: "Male/Female - Hindi, English, Mathematics",
     type: "Full Time",
     location: "Lucknow",
-    contacts: ["+91-1234567890", "1234567890"],
     open: true,
   },
   {
@@ -16,7 +15,6 @@ export const JOBS: Job[] = [
     description: "Male/Female - Mathematics",
     type: "Full Time",
     location: "Lucknow",
-    contacts: ["+91-1234567890", "1234567890"],
     open: false,
   },
   {
@@ -25,7 +23,6 @@ export const JOBS: Job[] = [
     description: "Male/Female - Academic Counseling",
     type: "Full Time",
     location: "Lucknow",
-    contacts: ["+91-1234567890", "1234567890"],
     open: false,
   },
 ];
