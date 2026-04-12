@@ -31,13 +31,13 @@ export default function PopupModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-2 py-2 animate-fade-in"
       onClick={onClose}
     >
       <div
         role="dialog"
         aria-modal="true"
-        className={`w-full rounded-2xl border border-gray-200 bg-white shadow-2xl ${sizeClasses[size]}`}
+        className={`w-full rounded-2xl border border-gray-200 bg-white shadow-2xl overflow-hidden ${sizeClasses[size]}`}
         onClick={(e) => e.stopPropagation()}
       >
         {title && (

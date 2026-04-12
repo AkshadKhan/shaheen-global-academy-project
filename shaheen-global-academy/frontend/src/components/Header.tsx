@@ -481,7 +481,7 @@ export function Header() {
                       </Link>
 
                       <Link
-                        to=""
+                        to="/courses"
                         onClick={handleMobileLinkClick}
                         className="px-4 py-2 text-gray-700 hover:text-[#9AE600]"
                       >
@@ -556,26 +556,6 @@ export function Header() {
                   About
                 </Link>
               </nav>
-
-              {/* Mobile Menu Footer */}
-              <div className="p-6 border-t border-gray-200 space-y-3">
-                <button
-                  className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 transition-colors flex items-center justify-center gap-2"
-                  onClick={() => {
-                    setSearchOpen(true);
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  {" "}
-                  {/* look at it, if optimized cz made almost without ai*/}
-                  <Search className="w-4 h-4" />
-                  Search
-                </button>
-
-                <button className="w-full px-4 py-3 bg-gray-100 text-gray-900 rounded-lg hover:bg-gray-200 transition-colors">
-                  Language: EN
-                </button>
-              </div>
             </div>
           </div>
         </>
