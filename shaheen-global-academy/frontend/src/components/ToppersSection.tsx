@@ -66,7 +66,7 @@ export function ToppersSection() {
           {/* SCROLL CONTAINER */}
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto hide-scrollbar gap-4 px-14 scroll-smooth"
+            className="flex overflow-x-auto overflow-y-hidden hide-scrollbar px-14 scroll-smooth"
           >
             {years.map((year) => (
               <button

@@ -37,17 +37,5 @@ export const toppers: Record<string, Topper[]> = {
     //   image: "testImage.png",
     //   college: "AIIMS Delhi",
     // },
-  ],
-  "2022": [
-
-  ],
-  "2021": [
-
-  ],
-  "2020": [
-
-  ],
-  "2019": [
-
-  ],
+  ]
 };
