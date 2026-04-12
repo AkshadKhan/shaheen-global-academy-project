@@ -8,7 +8,7 @@ export default function NotFoundPage() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gray-950 px-4 py-16 text-white">
+    <section className="relative min-h-screen overflow-hidden bg-gray-900 px-4 py-16 text-white">
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute left-[-5rem] top-20 h-56 w-56 rounded-full bg-[#9AE600]/15 blur-3xl" />
         <div className="absolute right-[-6rem] top-28 h-72 w-72 rounded-full bg-cyan-500/10 blur-3xl" />
