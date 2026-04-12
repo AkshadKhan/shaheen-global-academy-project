@@ -1,14 +1,15 @@
-import logo from '../assets/logo.png';
+import logo from "../assets/logo.png";
 // import { Mail } from 'lucide-react';
-import { useState } from 'react';
-import ComingSoonModal from './ComingSoonModal';
-import Modal from './Modal';
-import Terms from '../pages/Terms';
-import PrivacyPolicy from '../pages/PrivacyPolicy';
+import { useState } from "react";
+import ComingSoonModal from "./ComingSoonModal";
+import Modal from "./Modal";
+import Terms from "../pages/Terms";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const [showModal, setShowModal] = useState(false);
-  const [openModal, setOpenModal] = useState<'terms' | 'privacy' | null>(null);
+  const [openModal, setOpenModal] = useState<"terms" | "privacy" | null>(null);
 
   return (
     <footer className="bg-gray-50">
@@ -46,38 +47,110 @@ export function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
             {/* Logo and Address */}
             <div className="md:col-span-2">
-              <img src={logo} alt="Shaheen Education Foundation" className="h-12 mb-6" />
-                <address className="text-gray-400 not-italic mb-6">
-                Shaheen began in 1989 with just 18 students<br />and has grown into a nationwide educational<br />network, empowering thousands through<br />academic excellence and value-based learning.<br />
-                </address>
-                <address className="text-gray-400 not-italic mb-6">
-                <a href="https://www.google.com/maps/search/Shaheen+Global+Academy+Dr.+Abdul+Ali+Tibbiya+College+Road+Katauli+Malihabad+Lucknow+Uttar+Pradesh+226102" target="_blank" rel="noopener noreferrer" className="hover:text-lime-400 transition-colors">
-                  Shaheen Global Academy<br/> Dr. Abdul Ali Tibbiya College Road Katauli-Malihabad<br/>Lucknow, Uttar Pradesh 226102
+              <img
+                src={logo}
+                alt="Shaheen Education Foundation"
+                className="h-12 mb-6"
+              />
+              <address className="text-gray-400 not-italic mb-6">
+                Shaheen began in 1989 with just 18 students
+                <br />
+                and has grown into a nationwide educational
+                <br />
+                network, empowering thousands through
+                <br />
+                academic excellence and value-based learning.
+                <br />
+              </address>
+              <address className="text-gray-400 not-italic mb-6">
+                <a
+                  href="https://www.google.com/maps/search/Shaheen+Global+Academy+Dr.+Abdul+Ali+Tibbiya+College+Road+Katauli+Malihabad+Lucknow+Uttar+Pradesh+226102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-lime-400 transition-colors"
+                >
+                  Shaheen Global Academy
+                  <br /> Dr. Abdul Ali Tibbiya College Road Katauli-Malihabad
+                  <br />
+                  Lucknow, Uttar Pradesh 226102
                 </a>
-                </address>
-                <div className="space-y-2 text-gray-400">
+              </address>
+              <div className="space-y-2 text-gray-400">
                 <div>
                   <span className="text-gray-500">Call Us: </span>
-                    <a href="tel:+919044442494" className="text-gray-400 hover:text-lime-400 transition-colors">+91 90444 42494</a>
+                  <a
+                    href="tel:+919044442494"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    +91 90444 42494
+                  </a>
                 </div>
                 <div>
                   <span className="text-gray-500">Email</span>
                   <p>shaheenglobalacademy@gmail.com</p>
                 </div>
-                </div>
+              </div>
             </div>
 
             {/* Quick Links */}
             <div>
               <h4 className="text-white mb-4">Quick links</h4>
               <ul className="space-y-2">
-                <li><a href="#enquiry" className="text-gray-400 hover:text-lime-400 transition-colors">Admission</a></li>
-                <li><a href="https://www.google.com/maps/search/Shaheen+Global+Academy+Dr.+Abdul+Ali+Tibbiya+College+Road+Katauli+Malihabad+Lucknow+Uttar+Pradesh+226102" className="text-gray-400 hover:text-lime-400 transition-colors">Address</a></li>
-                <li><a href="#courses" className="text-gray-400 hover:text-lime-400 transition-colors">Courses</a></li>
-                <li><a href="#about" className="text-gray-400 hover:text-lime-400 transition-colors">About us</a></li>
-                <li><a href="#enquiry" className="text-gray-400 hover:text-lime-400 transition-colors">FAQ</a></li>
-                <li><a href="#enquiry" className="text-gray-400 hover:text-lime-400 transition-colors">Contact us</a></li>
-                {/* <li><a href="/login" className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li> */}
+                <li>
+                  <Link
+                    to="/academics"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Admission
+                  </Link>
+                </li>
+
+                <li>
+                  <a
+                    href="https://www.google.com/maps/search/Shaheen+Global+Academy+Dr.+Abdul+Ali+Tibbiya+College+Road+Katauli+Malihabad+Lucknow+Uttar+Pradesh+226102"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Address
+                  </a>
+                </li>
+
+                <li>
+                  <Link
+                    to="/courses"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Courses
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/about"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    About us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/careers"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Careers
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to="/contact"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Contact us
+                  </Link>
+                </li>
               </ul>
             </div>
 
@@ -85,11 +158,56 @@ export function Footer() {
             <div>
               <h4 className="text-white mb-4">Social</h4>
               <ul className="space-y-2">
-                <li><a href="https://www.facebook.com/shaheenlucknow/" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Facebook</a></li>
-                <li><a href="https://www.instagram.com/shaheenglobalacademy" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Instagram</a></li>
-                <li><a href="https://www.linkedin.com/in/fakhrul-islam-34748a138/" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">LinkedIn</a></li>
-                <li><a href="https://twitter.com/Shaheengrouporg" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Twitter</a></li>
-                <li><a href="https://www.youtube.com/@shaheengroupofinstitutions" target='_blank' rel="noopener noreferrer" className="text-gray-400 hover:text-lime-400 transition-colors">Youtube</a></li>
+                <li>
+                  <a
+                    href="https://www.facebook.com/shaheenlucknow/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Facebook
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.instagram.com/shaheenglobalacademy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Instagram
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/fakhrul-islam-34748a138/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://twitter.com/Shaheengrouporg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Twitter
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com/@shaheengroupofinstitutions"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Youtube
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -97,9 +215,30 @@ export function Footer() {
             <div>
               <h4 className="text-white mb-4">Legal</h4>
               <ul className="space-y-2 cursor-default">
-                <li><a onClick={() => setOpenModal("terms")} className="text-gray-400 hover:text-lime-400 transition-colors">Terms of service</a></li>
-                <li><a onClick={() => setOpenModal("privacy")} className="text-gray-400 hover:text-lime-400 transition-colors">Privacy policy</a></li>
-                <li><a onClick={() => setShowModal(true)} className="text-gray-400 hover:text-lime-400 transition-colors">Admin Login</a></li>
+                <li>
+                  <button
+                    onClick={() => setOpenModal("terms")}
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Terms of service
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => setOpenModal("privacy")}
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Privacy policy
+                  </button>
+                </li>
+                <li>
+                  <a
+                    onClick={() => setShowModal(true)}
+                    className="text-gray-400 hover:text-lime-400 transition-colors"
+                  >
+                    Admin Login
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
@@ -107,7 +246,8 @@ export function Footer() {
           {/* Copyright */}
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-500">
-              &copy; {new Date().getFullYear()} Shaheen Global Academy. All rights reserved.
+              &copy; {new Date().getFullYear()} Shaheen Global Academy. All
+              rights reserved.
             </p>
           </div>
         </div>
@@ -121,7 +261,7 @@ export function Footer() {
 
       {/* Terms Modal */}
       <Modal
-        isOpen={openModal === 'terms'}
+        isOpen={openModal === "terms"}
         onClose={() => setOpenModal(null)}
         title="Terms of Service"
       >
@@ -130,7 +270,7 @@ export function Footer() {
 
       {/* Privacy Modal */}
       <Modal
-        isOpen={openModal === 'privacy'}
+        isOpen={openModal === "privacy"}
         onClose={() => setOpenModal(null)}
         title="Privacy Policy"
       >

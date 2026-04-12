@@ -1,4 +1,4 @@
-import rightImage from "../assets/image-2.png";
+import rightImage from "/popups/admission-open.jpg";
 import toppersImage from "../assets/image-3.png";
 
 export function NewsEvents() {

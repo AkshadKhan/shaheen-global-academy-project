@@ -243,19 +243,33 @@ export function Header() {
               {/* only show on homepage */}
               {isHomePage && (
                 <>
-                  <a
-                    href="/academics"
+                  <Link
+                    to="/academics"
                     className={`transition-all duration-300 relative group font-semibold ${
                       scrolled
                         ? "text-gray-700 hover:text-gray-900 text-base"
                         : "text-gray-900 hover:text-[#9AE600] text-xl"
                     }`}
                   >
-                    Admissions {/* admision through fdorms */}
+                    Admission
                     <span
                       className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
                     ></span>
-                  </a>
+                  </Link>
+
+                  <Link
+                    to="/careers"
+                    className={`transition-all duration-300 relative group font-semibold ${
+                      scrolled
+                        ? "text-gray-700 hover:text-gray-900 text-base"
+                        : "text-gray-900 hover:text-[#9AE600] text-xl"
+                    }`}
+                  >
+                    Careers
+                    <span
+                      className={`absolute bottom-0 left-0 w-0 h-0.5 bg-[#9AE600] transition-all duration-300 group-hover:w-full`}
+                    ></span>
+                  </Link>
                 </>
               )}
 
@@ -287,7 +301,6 @@ export function Header() {
                 ></span>
               </Link>
             </nav>
-            
             {/* Right Side Actions */}{" "}
             <div
               ref={searchRef}
@@ -389,7 +402,6 @@ export function Header() {
                 />
               </button>
             </div>
-            
             {/* Mobile Menu Toggle Button */}
             <button
               className={`lg:hidden p-2.5 rounded-full transition-colors ${
