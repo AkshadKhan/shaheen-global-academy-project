@@ -11,6 +11,7 @@ import QuickLinks from "./components/QuickLinks";
 import Gallery from "./pages/Gallery";
 import ContactUsPage from "./pages/ContactUsPage";
 import CoursesPage from "./pages/CoursesPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 // import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
@@ -30,6 +31,7 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactUsPage />} />
+          <Route path="*" element={<NotFoundPage />} />
           {/* <Route path="/login" element={<AdminLogin />} /> */}
           
         </Routes>
