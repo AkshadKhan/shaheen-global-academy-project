@@ -13,6 +13,7 @@ import ContactUsPage from "./pages/ContactUsPage";
 import CoursesPage from "./pages/CoursesPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import PopupManager from "./features/PopupManager";
+import CareerPage from "./pages/CareerPage";
 
 // import AdminLogin from "../../adminLogin/src/pages/AdminLogin";
 
@@ -29,6 +30,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/academics" element={<AcademicsPage />} />
           <Route path="/courses" element={<CoursesPage />} />
+          <Route path="/careers" element={<CareerPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<ContactUsPage />} />
