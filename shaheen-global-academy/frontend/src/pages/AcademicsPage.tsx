@@ -17,9 +17,10 @@ export default function Academics() {
     },
     {
       title: "Admission Form",
-      desc: "Download and submit admission forms for various programs.",
+      desc: "Apply now to join our academy and embark on a transformative educational journey.",
       link: "https://docs.google.com/forms/d/e/1FAIpQLSeQSwPO2eLsrKp5X34Fa4JCHwiRDXOVSmq19fq4yOHN138kvg/viewform?usp=dialog",
       type: "external",
+      highlight: true,
     },
     {
       title: "Academic Calendar",
@@ -81,13 +82,23 @@ export default function Academics() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto mt-16 mb-16">
         {sections.map((sec, i) => {
           const isInternal = sec.type === "internal";
+          const isHighlighted = sec.highlight;
+
+          const baseClass = `
+            group block p-8 rounded-2xl transition-all duration-300 cursor-pointer
+            ${
+              isHighlighted
+                ? "bg-gradient-to-br from-yellow-50 to-yellow-100 border border-yellow-300 shadow-md hover:shadow-xl hover:border-yellow-400"
+                : "bg-white border border-gray-100 shadow-sm hover:shadow-xl hover:border-[#9AE600]"
+            }
+          `;
 
           if (sec.comingSoon) {
             return (
               <div
                 key={i}
                 onClick={() => handleSectionClick(sec)}
-                className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300 cursor-pointer"
+                className={baseClass}
               >
                 <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
                   {sec.title}
@@ -100,16 +111,22 @@ export default function Academics() {
 
           if (isInternal) {
             return (
-              <Link
-                key={i}
-                to={sec.link}
-                className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300"
-              >
-                <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
+              <Link key={i} to={sec.link} className={baseClass}>
+                <h3
+                  className={`text-xl mb-2 transition ${
+                    isHighlighted
+                      ? "text-yellow-700 group-hover:text-yellow-800"
+                      : "text-gray-800 group-hover:text-[#9AE600]"
+                  }`}
+                >
                   {sec.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{sec.desc}</p>
-                <div className="mt-4 h-[3px] w-0 group-hover:w-20 bg-[#9AE600] transition-all duration-300"></div>
+                <div
+                  className={`mt-4 h-[3px] w-0 group-hover:w-20 transition-all duration-300 ${
+                    isHighlighted ? "bg-yellow-500" : "bg-[#9AE600]"
+                  }`}
+                />
               </Link>
             );
           }
@@ -120,7 +137,7 @@ export default function Academics() {
               href={sec.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block p-8 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9AE600] transition-all duration-300"
+              className={baseClass}
             >
               <h3 className="text-gray-800 text-xl mb-2 group-hover:text-[#9AE600]">
                 {sec.title}

@@ -542,15 +542,23 @@ export function Header() {
                 {/* only show on homepage */}
                 {isHomePage && (
                   <>
-                    <a
-                      href="#enquiry"
+                    <Link
+                      to="/academics"
                       className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
                       onClick={handleMobileLinkClick}
                     >
-                      Admissions
-                    </a>
+                      Admission
+                    </Link>
                   </>
                 )}
+
+                <Link
+                  to="/careers"
+                  className="px-4 py-3 text-gray-900 hover:bg-[#9AE600]/10 hover:text-[#9AE600] rounded-lg transition-colors"
+                  onClick={handleMobileLinkClick}
+                >
+                  Careers
+                </Link>
 
                 <Link
                   to="/contact"
