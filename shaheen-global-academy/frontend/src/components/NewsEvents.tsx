@@ -1,5 +1,5 @@
 import rightImage from "/popups/admission-open.jpg";
-import toppersImage from "../assets/image-3.png";
+import toppersImage from "../assets/image-3.jpg";
 
 export function NewsEvents() {
   return (
